@@ -2,10 +2,6 @@
 session_start();
 require_once("db.php");
 
-if (!isset($_POST['username']) || !isset($_POST['password'])) {
-    header("Location: login.php?error=empty");
-}
-
 $username = $_POST["username"];
 $password = $_POST["password"];
 
@@ -14,8 +10,10 @@ $stmt = $db->prepare($sql);
 $stmt->execute([$username]);
 $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-if (!password_verify($password, $row["password"])) {
+if ($_POST['username'] == NULL || ($_POST['password'] == NULL)) {
     header("Location: login.php?error=error");
+} elseif (!password_verify($password, $row["password"])) {
+    header("Location: login.php?empty=error");
 } else {
     $_SESSION["id"] = $row["id"];
     $_SESSION["username"] = $row["username"];

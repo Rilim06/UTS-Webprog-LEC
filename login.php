@@ -1,11 +1,12 @@
 <h1>Login</h1>
+<?php if (isset($_GET['empty'])): ?>
+    <div class="alert alert-danger text-center w-80 mx-auto fw-bold" role="alert">
+        Username or Password incorrect.
+    </div>
+<?php endif; ?>
 <?php if (isset($_GET['error'])): ?>
     <div class="alert alert-danger text-center w-80 mx-auto fw-bold" role="alert">
-        <?php if ($_GET['error'] === 'error'): ?>
-            Username or Password incorrect.
-        <?php elseif ($_GET['error'] === 'empty'): ?>
-            Please fill in all the fields.
-        <?php endif; ?>
+        Please fill in all the fields.
     </div>
 <?php endif; ?>
 
