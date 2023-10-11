@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 11, 2023 at 01:38 PM
+-- Generation Time: Oct 11, 2023 at 04:59 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `contoh_database`
+-- Database: `database_uts_lec`
 --
 
 -- --------------------------------------------------------
@@ -41,8 +41,8 @@ CREATE TABLE `cart` (
 --
 
 INSERT INTO `cart` (`id`, `Food Name`, `Category`, `Price`, `Qty`, `id_user`) VALUES
-(10, 'Aaru Mixed Rice', 'Food', '1925', 3, 12),
-(11, 'Fruity Duet', 'Drink', '2500', 6, 12);
+(26, 'Dango Milk', 'Drink', '1500', 3, 3),
+(27, 'Almond Tofu', 'Food', '1550', 5, 3);
 
 -- --------------------------------------------------------
 
@@ -118,69 +118,27 @@ INSERT INTO `foods` (`ID`, `Food Name`, `Category`, `Price`, `Image Path`, `Desc
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mahasiswa`
+-- Table structure for table `user`
 --
 
-CREATE TABLE `mahasiswa` (
-  `id` int(100) NOT NULL,
-  `nim` varchar(25) NOT NULL,
-  `nama` varchar(50) NOT NULL,
-  `prodi` varchar(50) NOT NULL,
-  `foto` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `mahasiswa`
---
-
-INSERT INTO `mahasiswa` (`id`, `nim`, `nama`, `prodi`, `foto`) VALUES
-(13, '00000079061', 'Rich', 'Film', 'foto/Genshin 4.0.jpeg');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `mahasiswa_login`
---
-
-CREATE TABLE `mahasiswa_login` (
+CREATE TABLE `user` (
   `id` int(25) NOT NULL,
-  `nim` varchar(100) NOT NULL,
-  `nama` varchar(100) NOT NULL,
-  `prodi` varchar(100) NOT NULL,
+  `first_name` varchar(100) NOT NULL,
+  `last_name` varchar(100) NOT NULL,
+  `username` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
-  `foto` varchar(100) NOT NULL
+  `tanggal_lahir` date NOT NULL,
+  `jenis_kelamin` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `mahasiswa_login`
+-- Dumping data for table `user`
 --
 
-INSERT INTO `mahasiswa_login` (`id`, `nim`, `nama`, `prodi`, `password`, `foto`) VALUES
-(6, '111', 'Rich', 'Film', '$2y$10$gWJDzcqWdHHj1EQkTvz6HOG1J/qpFtM.UVvLTgGClZWNOP7eVJdZe', 'foto/Genshin 4.1.jpeg'),
-(7, '001', 'Rich', 'DKV', '$2y$10$DGxOgBAFMK1QqK/v2UOcq.rxPhJtdKvgPOD2vY3g3lTI5wWdsSDK.', 'foto/Genshin 4.0.jpeg'),
-(11, '555', '', '', '$2y$10$b6AMRSodvTPrVOMb1asGNOFMsJl.FIK0EioZkAToK9vW0ZesRBBjS', ''),
-(12, '333', '', '', '$2y$10$reUZ3tgSnVz5wip4fZ50M.AoAtaj3tvPSmRi5a1zkl3VC6Ih2lgT2', '');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `users2`
---
-
-CREATE TABLE `users2` (
-  `id` int(11) NOT NULL,
-  `username` varchar(50) NOT NULL,
-  `password` varchar(100) NOT NULL,
-  `role` varchar(25) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `users2`
---
-
-INSERT INTO `users2` (`id`, `username`, `password`, `role`) VALUES
-(1, 'Rilim', '$2y$10$5vhpW250BOBZWDStEBX4we.s2IZIMA/tLYW9et2R1HZ/X2AZz4zzm', 'student'),
-(2, 'Rilim06', '$2y$10$vL20L9mu.t7rEMQg9RpCvu5VXehVlvNU4.hI0vaikRoO0XQT4.Jsa', 'lecturer');
+INSERT INTO `user` (`id`, `first_name`, `last_name`, `username`, `password`, `tanggal_lahir`, `jenis_kelamin`) VALUES
+(1, 'admin', 'admin', 'admin', '$2y$10$uQvwnU3QGDJNKzykZiYpDuzh7jN8k0.1vdwepb.ynYmlD9bjP9ovW', '2023-10-11', 'Male'),
+(2, 'John', 'Thor', 'user', '$2y$10$sxIDndA3thon5l3z1fSrSO6mnQc/tyc2HcPwWfTXC5r/Dxg/hzLNS', '2023-10-11', 'Female'),
+(3, 'John', 'Doe', 'user1', '$2y$10$UZMFk2X7S6u/cBu3YwZ8T.3V6S7g6.FVh4dBN88zr4oZQy1X1NK7G', '2023-10-11', 'Male');
 
 --
 -- Indexes for dumped tables
@@ -200,23 +158,9 @@ ALTER TABLE `foods`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Indexes for table `mahasiswa`
+-- Indexes for table `user`
 --
-ALTER TABLE `mahasiswa`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `nim` (`nim`);
-
---
--- Indexes for table `mahasiswa_login`
---
-ALTER TABLE `mahasiswa_login`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `nim` (`nim`);
-
---
--- Indexes for table `users2`
---
-ALTER TABLE `users2`
+ALTER TABLE `user`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `username` (`username`);
 
@@ -228,7 +172,7 @@ ALTER TABLE `users2`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `foods`
@@ -237,32 +181,10 @@ ALTER TABLE `foods`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
--- AUTO_INCREMENT for table `mahasiswa`
+-- AUTO_INCREMENT for table `user`
 --
-ALTER TABLE `mahasiswa`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
-
---
--- AUTO_INCREMENT for table `mahasiswa_login`
---
-ALTER TABLE `mahasiswa_login`
-  MODIFY `id` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
-
---
--- AUTO_INCREMENT for table `users2`
---
-ALTER TABLE `users2`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `cart`
---
-ALTER TABLE `cart`
-  ADD CONSTRAINT `cart_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `mahasiswa_login` (`id`);
+ALTER TABLE `user`
+  MODIFY `id` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
