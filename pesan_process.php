@@ -2,12 +2,15 @@
 session_start();
 require_once("db.php");
 
-if (!isset($_SESSION["id"]) && !isset($_SESSION["nim"])) {
+if (!isset($_SESSION["id"]) && !isset($_SESSION["username"])) {
     if ($_POST['pesan'] == 'add_food') {
         header("Location: food.php?error=error");
+        exit;
     } else {
-        if ($_POST['pesan'] == 'add_drink')
+        if ($_POST['pesan'] == 'add_drink') {
             header("Location: drink.php?error=error");
+            exit;
+        }
     }
 }
 

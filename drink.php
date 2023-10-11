@@ -23,8 +23,10 @@ $stmt->execute([]);
 <a href='index.php'>Back</a><br />
 
 <?php
-if ($_SESSION["nim"] == 001) {
-    echo "<a href='add.php'>Add Menu</a>";
+if (isset($_SESSION["id"]) && isset($_SESSION["username"])) {
+    if ($_SESSION["username"] == 'admin') {
+        echo "<a href='add.php'>Add Menu</a>";
+    }
 }
 ?>
 
@@ -55,7 +57,7 @@ if ($_SESSION["nim"] == 001) {
             <td>
                 <!-- Fitur Pesan dan Edit untuk Customer dan Admin -->
                 <?php
-                if (!isset($_SESSION["id"]) && !isset($_SESSION["nim"])) {
+                if (!isset($_SESSION["id"]) && !isset($_SESSION["username"])) {
                     echo "
                         <form action='pesan_process.php' method='POST'>
                             <button type='button' class='decrement' data-item='item-count-$drinkID'>-</button>
@@ -65,7 +67,7 @@ if ($_SESSION["nim"] == 001) {
                         </form>
                     ";
                 } else {
-                    if ($_SESSION["nim"] == 001) {
+                    if ($_SESSION["username"] == 'admin') {
                         echo "
                             <form method='POST' action='edit.php'>
                                 <input type='hidden' name='id' value='" . $row['ID'] . "'>

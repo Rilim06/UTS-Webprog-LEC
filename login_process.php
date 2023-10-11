@@ -2,20 +2,22 @@
 session_start();
 require_once("db.php");
 
-$nim = $_POST["nim"];
+if (!isset($_POST['username']) || !isset($_POST['password'])) {
+    header("Location: login.php?error=empty");
+}
+
+$username = $_POST["username"];
 $password = $_POST["password"];
 
-$sql = "SELECT * FROM mahasiswa_login WHERE nim = ?";
+$sql = "SELECT * FROM user WHERE username = ?";
 $stmt = $db->prepare($sql);
-$stmt->execute([$nim]);
+$stmt->execute([$username]);
 $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
 if (!password_verify($password, $row["password"])) {
     header("Location: login.php?error=error");
-    exit;
 } else {
     $_SESSION["id"] = $row["id"];
-    $_SESSION["nim"] = $row["nim"];
-    $_SESSION["nama"] = $row["nama"];
+    $_SESSION["username"] = $row["username"];
     header("Location: index.php");
 }

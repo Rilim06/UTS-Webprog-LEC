@@ -1,5 +1,5 @@
 <?php
-define("DSN", "mysql:host=localhost;dbname=contoh_database");
+define("DSN", "mysql:host=localhost;dbname=database_uts_lec");
 define("DBUSER", "root");
 define("DBPASS", "");
 

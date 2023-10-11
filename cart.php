@@ -4,7 +4,7 @@ require_once("db.php");
 
 echo "<h1>My Cart</h1>";
 
-if (!isset($_SESSION["id"]) && !isset($_SESSION["nim"])) {
+if (!isset($_SESSION["id"]) && !isset($_SESSION["username"])) {
     echo "
             You are not logged in, log in to view cart.<br />
             <a href='login.php'>Login</a><br />
