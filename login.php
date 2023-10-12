@@ -14,6 +14,11 @@
         Captcha incorrect.
     </div>
 <?php endif; ?>
+<?php if (isset($_GET['change'])): ?>
+    <div class="alert alert-danger text-center w-80 mx-auto fw-bold" role="alert">
+        Password successfully changed.
+    </div>
+<?php endif; ?>
 
 <form action="login_process.php" method="POST">
     <label>Username : </label>
@@ -29,6 +34,7 @@
     <input type="hidden" name="captcha_generate" value="<?php echo $captcha; ?>" /><br />
     <button type="submit">Login</button>
 </form>
+<a href="forget.php">Forget Password?</a>
 <p>Don't have an account?</p>
 <a href="register.php">Register Now</a>
 
