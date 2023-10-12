@@ -19,8 +19,25 @@ $stmt->execute([]);
     </div>
 <?php endif; ?>
 
-<a href='cart.php'>Cart</a><br />
-<a href='index.php'>Back</a><br />
+<?php
+if (isset($_SESSION["id"]) && isset($_SESSION["username"])) {
+    if ($_SESSION["username"] == 'admin') {
+        echo "
+            <a href='index.php'>Back</a><br />
+        ";
+    } else {
+        echo "
+            <a href='cart.php'>Cart</a><br />
+            <a href='index.php'>Back</a><br />
+        ";
+    }
+} else {
+    echo "
+        <a href='cart.php'>Cart</a><br />
+        <a href='index.php'>Back</a><br />
+    ";
+}
+?>
 
 <?php
 if (isset($_SESSION["id"]) && isset($_SESSION["username"])) {
