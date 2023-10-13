@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 11, 2023 at 04:59 PM
+-- Generation Time: Oct 13, 2023 at 07:34 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -42,7 +42,15 @@ CREATE TABLE `cart` (
 
 INSERT INTO `cart` (`id`, `Food Name`, `Category`, `Price`, `Qty`, `id_user`) VALUES
 (26, 'Dango Milk', 'Drink', '1500', 3, 3),
-(27, 'Almond Tofu', 'Food', '1550', 5, 3);
+(36, 'Zhongyuan Chop Suey', 'Food', '3000', 21, 2),
+(39, 'Almond Tofu', 'Food', '1550', 10, 2),
+(40, 'Cold Cut Platter', 'Food', '4000', 5, 2),
+(41, 'Baklava', 'Food', '5000', 7, 2),
+(42, 'Aaru Mixed Rice', 'Food', '1925', 1, 2),
+(43, 'Holy Water', 'Drink', '5000', 5, 2),
+(44, 'Dango Milk', 'Drink', '1500', 1, 2),
+(45, 'Crab Roe Kourayaki', 'Food', '8000', 2, 2),
+(46, 'Fruits of the Festival', 'Drink', '1500', 5, 2);
 
 -- --------------------------------------------------------
 
@@ -66,25 +74,25 @@ CREATE TABLE `foods` (
 INSERT INTO `foods` (`ID`, `Food Name`, `Category`, `Price`, `Image Path`, `Description`) VALUES
 (1, 'Aaru Mixed Rice', 'Food', 1925, 'Item_Aaru_Mixed_Rice.webp', 'A large serving of filling staple food. In this dish that combines rice, noodles, and beans together, the secret of great taste lies in the sweet and sour flavor imparted by tomatoes. Owing to its common nature and low price, this dish is a great choice for sating one\'s hunger — which is one of the key reasons why this recipe has spread from Aaru Village to the rest of Sumeru.'),
 (2, 'Almond Tofu', 'Food', 1550, 'Item_Almond_Tofu.webp', 'A dessert made out of almond. It has a silky-smooth texture with a long-lasting aroma of almond. It\'s named tofu only because of its tofu-like shape.'),
-(3, 'Baklava', 'Food', 5000, 'Item_Baklava.webp', '\"A traditional Sumeru dessert. This puff pastry contains chopped nuts and has been baked after having butter drizzled atop it — and not forgetting some syrup once it comes out of the oven. Some researchers will specially order this veritable \"\"fortress of sweetness\"\" to replenish their energies before an exam. This is also why this dish has great pride of place as the Akademiya\'s favorite dessert.\"'),
+(3, 'Baklava', 'Food', 5000, 'Item_Baklava.webp', 'A traditional Sumeru dessert. This puff pastry contains chopped nuts and has been baked after having butter drizzled atop it — and not forgetting some syrup once it comes out of the oven. Some researchers will specially order this veritable fortress of sweetness to replenish their energies before an exam. This is also why this dish has great pride of place as the Akademiya\'s favorite dessert.'),
 (4, 'Bamboo Shoot Soup', 'Food', 5000, 'Item_Bamboo_Shoot_Soup.webp', 'A soup dish that\'s been stewed for a good long while. The meat and ham have been diced into small pieces, and the soup has been kept on low heat till it turned milky white. The process has brought out the distinct flavors of both kinds of meat, making for an especially tasty soup.'),
 (5, 'Barbatos Ratatouille', 'Food', 4500, 'Item_Barbatos_Ratatouille.webp', 'A simple chowder with a long history. The ingredients are similarly traditional and simple. No matter where you are, a piping-hot chowder of this sort can always give you a sense of real and unsurpassed satisfaction.'),
 (6, 'Barbeque Ribs', 'Food', 750, 'Item_Barbeque_Ribs.webp', 'A crispy meat dish. Lightly fry the surface of the ribs until they exude a faint aroma, then wrap the crispy exterior with sauce, and finally, grill them slowly on low heat. The meticulous temperature control ensures that the exterior is perfectly crisp, while the meat within is kept juicy and tender.'),
 (7, 'Black-Back Perch Stew', 'Food', 5000, 'Item_Black-Back_Perch_Stew.webp', 'A poached fish dish. The fresh and tasty fish fillets are tender and juicy. The secret to this recipe is adding powdered Violetgrass into the heated oil to give the dish that aromatic scent. It\'s spicy, but not too spicy.'),
-(8, 'Cassoulet', 'Food', 5000, 'Item_Cassoulet.webp', '\"A simple countryside stew. Simply put all the ingredients in a casserole, mix them up, and cook until they are ready to serve. It is worth noting that the full name of this dish is \"\"Glabrous Beans, Fowl Confit, and Smoked Sausage Stew in Cassoulet Casserole with a Side of Marcotte.\"\" The intimidating lengthiness of the name has, understandably, driven people to just call it \"\"Cassoulet.\"\"\"'),
+(8, 'Cassoulet', 'Food', 5000, 'Item_Cassoulet.webp', 'A simple countryside stew. Simply put all the ingredients in a casserole, mix them up, and cook until they are ready to serve. It is worth noting that the full name of this dish is Glabrous Beans, Fowl Confit, and Smoked Sausage Stew in Cassoulet Casserole with a Side of Marcotte. The intimidating lengthiness of the name has, understandably, driven people to just call it Cassoulet.\r\n'),
 (9, 'Cold Cut Platter', 'Food', 4000, 'Item_Cold_Cut_Platter.webp', 'A plate of cold cut meat. An equal balance of bacon, ham and sausage keeps everyone happy.'),
 (10, 'Crab Roe Kourayaki', 'Food', 8000, 'Item_Crab_Roe_Kourayaki.webp', 'A crab meat dish that has been cooked directly over the flames. The meat and roe are mixed evenly, before being garnished with plump crab legs. The happiness that flows forth from that first bite imparts meaning upon your prior forbearance.'),
 (11, 'Cured Pork Dry Hotpot', 'Food', 5000, 'Item_Cured_Pork_Dry_Hotpot.webp', 'A dish fried over a great flame. Matsutake and Ham have been sliced up, stir-fried, and garnished with some spicy condiments. The flavor of the Ham is a match for the Matsutake\'s crispness, and the combination grows even lovelier and more addictive as you chew. The heat-conducting wok also serves to keep it piping hot for long periods.'),
 (12, 'Dragon Beard Noodles', 'Food', 5000, 'Item_Dragon_Beard_Noodles.webp', 'Noodles that are as slender as the hairs on a dragon\'s beard. The green onion is fried in a wok before the soup and condiments are added. Last in are the noodles, after which the lot is ladled out and plated up. The noodles must be skillfully hand-pulled multiple times before they become extremely thin — a technique that makes this dish the most challenging noodle recipe in Liyue.'),
 (13, 'Egg Roll', 'Food', 1250, 'Item_Egg_Roll.webp', 'A fried egg dish. Beat eggs well, season and fry them slowly in a wok, roll up into a fixed shape. Pour our egg liquid in again and continue until it has all reached a certain thickness, then get ready to plate up. This is an ordinary yet welcoming Inazuman delicacy.'),
 (14, 'Fish and Chips', 'Food', 3500, 'Item_Fish_and_Chips.webp', 'A deep-fried appetizer. Coat fish fillets with batter and deep-fry until golden and crispy, then add a few chips on the side. This combination is so miraculous that whatever sauce you choose, it will always bring a hearty smile to your face.'),
-(15, 'Five Pickled Treasures', 'Food', 2500, 'Item_Five_Pickled_Treasures.webp', '\"Pickled vegetables. A round of fermentation makes food richer and also allows it to keep for longer. There were originally only four \"\"treasures,\"\" but for auspiciousness\' sake, the four vegetables were mixed and plated up with one additional \"\"treasure\"\" added in, hence the name \"\"Five Pickled Treasures.\"\"\"'),
+(15, 'Five Pickled Treasures', 'Food', 2500, 'Item_Five_Pickled_Treasures.webp', 'Pickled vegetables. A round of fermentation makes food richer and also allows it to keep for longer. There were originally only four treasures, but for auspiciousness\' sake, the four vegetables were mixed and plated up with one additional treasure added in, hence the name Five Pickled Treasures.'),
 (16, 'Fontainian Foie Gras', 'Food', 7500, 'Item_Fontainian_Foie_Gras.webp', 'A traditional dish of Fontaine. The foie gras only needs to be pan-fried before being served. Thanks to the masterful temperature control, the golden-brown foie gras tastes enticingly tender. The process takes focus and concentration, or else the delicious liver might be liquefied into an oily mess.'),
-(17, 'Imported Poultry', 'Food', 1000, 'Item_Imported_Poultry.webp', '\"A meat dish drizzled with sauce. The fowl is marinated before being covered in batter and fried, and a thick sauce is drizzled over it as a finishing touch. The accompanying vegetables are local produce, but the marinating methods and sauce are all imported, hence the name \"\"imported poultry.\"\"\"'),
+(17, 'Imported Poultry', 'Food', 1000, 'Item_Imported_Poultry.webp', 'A meat dish drizzled with sauce. The fowl is marinated before being covered in batter and fried, and a thick sauce is drizzled over it as a finishing touch. The accompanying vegetables are local produce, but the marinating methods and sauce are all imported, hence the name imported poultry.'),
 (18, 'Invigorating Kitty Meal', 'Food', 3000, 'Item_Invigorating_Kitty_Meal.webp', 'This main dish looks rather cute. With Kiminami Anna\'s help, this dish was made with the tastes of the provisional head priestess Neko in mind. Although it does not quite match the flavor that Hibiki used to produce, Lady Neko seems rather pleased with your work nonetheless, Due to lack of spices, humans might find this dish a tad on the plain side.'),
 (19, 'Jade Parcels', 'Food', 7500, 'Item_Jade_Parcels.webp', 'An exquisite-looking dish. The ham\'s sweetness is locked inside the fresh vegetables, drizzled with a spicy broth. Delicious is an understatement.'),
 (20, 'Jueyun Chili Chicken', 'Food', 5000, 'Item_Jueyun_Chili_Chicken.webp', 'Chicken in a dressing, served cold. The way this dish has been prepared captures the succulence of the chicken perfectly. Beneath the glowing gold skin, the meat has a mildly hot flavor.'),
-(21, 'Konda Cuisine', 'Food', 4500, 'Item_Konda_Cuisine.webp', '\"Slowly stewed local cuisine. Everyone in Konda Village knows how to make this dish. It originally had no name but would spread throughout Inazuma on account of its nutritious deliciousness. This eventually caused those from outside the village to give it its name — \"\"Konda Cuisine.\"\"\"'),
+(21, 'Konda Cuisine', 'Food', 4500, 'Item_Konda_Cuisine.webp', 'Slowly stewed local cuisine. Everyone in Konda Village knows how to make this dish. It originally had no name but would spread throughout Inazuma on account of its nutritious deliciousness. This eventually caused those from outside the village to give it its name — Konda Cuisine.'),
 (22, 'Lambad Fish Roll', 'Food', 5000, 'Item_Lambad_Fish_Roll.webp', 'A grilled fish dish with a faint floral scent. It is said that Lambad once adventured far and wide in his youth. Everywhere he went, he would taste the grilled fish at local taverns. This dish was not a signature food in Sumeru, and Lambad thought it was a pity, so he invented his own fish roll. According to the gourmets who often dine at his tavern, the tales of his adventures aren\'t necessarily true, but his fish roll is undoubtedly delicious.'),
 (23, 'Matsutake Meat Rolls', 'Food', 3000, 'Item_Matsutake_Meat_Rolls.webp', 'A pan-fried meat dish. Ground meat is put on the Matsutake and gently pan-fried on low heat so the Matsutake can fully take in the aromatic juice of the meat. It\'s a mouthwatering delicacy in all of its glory.'),
 (24, 'Mushroom Hodgepodge', 'Food', 1500, 'Item_Mushroom_Hodgepodge.webp', 'An Aranara-style dish that Paimon has drained her brain juice dry to improve. But in fact, it only requires a few common mushrooms from Sumeru, along with some extra seasonings. Paimon selected three types of mushrooms, and they were prepared and then cooked in a simple way, but the texture and flavor aren\'t bad at all.'),
@@ -100,9 +108,9 @@ INSERT INTO `foods` (`ID`, `Food Name`, `Category`, `Price`, `Image Path`, `Desc
 (34, 'Tahchin', 'Food', 5000, 'Item_Tahchin.webp', 'A classic staple served in large quantities. Cooked rice is mixed with meat that was marinated in yogurt, then baked until its surface turns crispy. Don\'t forget to add a handful of Padisarah petals before serving! Both the rice and meat are enough to keep one\'s stomach full for a long time, making it a very popular dish at the Grand Bazaar.'),
 (35, 'Tasses Ragout', 'Food', 10000, 'Item_Tasses_Ragout.webp', 'A vegetable ragout. It is an improvised dish created by Fontainian farmers celebrating vegetable harvests. There are no strict rules for the amount of ingredients or the cooking method. Be it stir-fried or baked, this unpretentious dish never fails to delight with its rustic savor.'),
 (36, 'Trout Amandine', 'Food', 7500, 'Item_Trout_Amandine.webp', 'Fish fillets of a satisfying size, fried with butter before serving with a side of crispy fried almonds. According to the traditional recipe for this dish, a whole readied trout would be placed into the frying pan, but a new, fillet-featuring recipe for this dish has been gaining popularity recently as well.'),
-(37, 'Unagi Chazuke', 'Food', 5000, 'Item_Unagi_Chazuke.webp', '\"A light and tasty main dish. Well-boiled tea is poured over rice with unagi on top and allowed to steep quietly until the rice grains have absorbed the fragrance of the tea. When combined with the lingering sweet aftertaste of the bowl of unagi, you can eat half a bowl before Paimon can say \"\"Whoa!\"\"\"'),
+(37, 'Unagi Chazuke', 'Food', 5000, 'Item_Unagi_Chazuke.webp', 'A light and tasty main dish. Well-boiled tea is poured over rice with unagi on top and allowed to steep quietly until the rice grains have absorbed the fragrance of the tea. When combined with the lingering sweet aftertaste of the bowl of unagi, you can eat half a bowl before Paimon can say Whoa!'),
 (38, 'Wakatakeni', 'Food', 5000, 'Item_Wakatakeni.webp', 'A light-colored vegetarian dish. Broth is first poured into the pot before the bamboo shoots, and then the seaweed, are added in. The result is an elegant product with a light mouthfeel that agrees well with all palates. Suitable as a pre-meal appetizer or as a side to a main dish.'),
-(39, 'Zhongyuan Chop Suey', 'Food', 3000, 'Item_Zhongyuan_Chop_Suey.webp', '\"A seasoned and cooked meat dish. Though it contains animal organ meat and bits and scraps of other things, the strong-flavored seasonings have masked the stench of the meat. Many have had this dish for the entirety of their lives without knowing \"\"chop suey\"\" is not actually a swear word in the local language.\"'),
+(39, 'Zhongyuan Chop Suey', 'Food', 3000, 'Item_Zhongyuan_Chop_Suey.webp', 'A seasoned and cooked meat dish. Though it contains animal organ meat and bits and scraps of other things, the strong-flavored seasonings have masked the stench of the meat. Many have had this dish for the entirety of their lives without knowing chop suey is not actually a swear word in the local language.'),
 (41, 'Dango Milk', 'Drink', 1500, 'Item_Dango_Milk.webp', 'A creative snack made by adding sticky dango to milk. It is sweet and has a dense mouthfeel. All the customers who have tried it love it. Still, it is dango that\'s been added in — drink too much and you might lose your appetite.'),
 (42, 'Fonta', 'Drink', 500, 'Item_Fonta.webp', 'A specialty drink created by the Fontaine Research Institute. It is well-received by locals.'),
 (43, 'Fruits of the Festival', 'Drink', 1500, 'Item_Fruits_of_the_Festival.webp', 'A brightly colored non-alcoholic beverage. Freshly squeezed Sunsettia and Wolfhook juices have been poured into a cup in a specific order. The cool and refreshing flavor and vibrant color remind people of the beautiful holiday times. Do not mess the order up if you want to get the gradient effect right!'),
@@ -138,7 +146,7 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`id`, `first_name`, `last_name`, `username`, `password`, `tanggal_lahir`, `jenis_kelamin`) VALUES
 (1, 'admin', 'admin', 'admin', '$2y$10$uQvwnU3QGDJNKzykZiYpDuzh7jN8k0.1vdwepb.ynYmlD9bjP9ovW', '2023-10-11', 'Male'),
 (2, 'John', 'Thor', 'user', '$2y$10$sxIDndA3thon5l3z1fSrSO6mnQc/tyc2HcPwWfTXC5r/Dxg/hzLNS', '2023-10-11', 'Female'),
-(3, 'John', 'Doe', 'user1', '$2y$10$UZMFk2X7S6u/cBu3YwZ8T.3V6S7g6.FVh4dBN88zr4oZQy1X1NK7G', '2023-10-11', 'Male');
+(3, 'John', 'Doe', 'user1', '$2y$10$NCxWRMIhxa/gejb48u/Cj.AoT1muJCte3H4nZi4t8h0kO8KFj/K5e', '2023-10-11', 'Male');
 
 --
 -- Indexes for dumped tables
@@ -172,13 +180,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT for table `foods`
 --
 ALTER TABLE `foods`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
 -- AUTO_INCREMENT for table `user`
