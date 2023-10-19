@@ -1,4 +1,7 @@
 <h1>Login</h1>
+<?php
+session_start();
+?>
 <?php if (isset($_GET['empty'])): ?>
     <div class="alert alert-danger text-center w-80 mx-auto fw-bold" role="alert">
         Username or Password incorrect.
@@ -19,6 +22,11 @@
         Password successfully changed.
     </div>
 <?php endif; ?>
+<?php
+if (isset($_SESSION["id"]) && isset($_SESSION["username"])) {
+    header('Location: index.php');
+}
+?>
 
 <form action="login_process.php" method="POST">
     <label>Username : </label>
