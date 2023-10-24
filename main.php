@@ -4,6 +4,12 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="fooddrink\foodcss.css">
     <link rel="stylesheet" href="navbar/stylenavbar.css">
+    <style>
+        body {
+            overflow-x: hidden;
+            background-color: lightgray;
+        }
+    </style>
 </head>
 <?php
 session_start();
@@ -16,36 +22,32 @@ $stmt->execute([]);
 ?>
 <header id="headeraos" class="shadow-xl">
     <ul class="navbar">
-        <li class="font-semibold text-[#ee3c20]  px-2 text-md xl:text-lg" id="navaos" style="--i:1;"><a href="index.php"
-                class="active">Back</a><br /></li>
+        <li class="font-semibold text-[#ee3c20]  px-2 text-md xl:text-lg" id="navaos" style="--i:1;"><a href="index.php" class="active">Back</a><br /></li>
         <?php
         if (isset($_SESSION["id"]) && isset($_SESSION["username"])) {
             if ($_SESSION["username"] == 'admin') {
-                ?>
+        ?>
                 <li class="font-semibold  px-2 text-md xl:text-lg" id="navaos" style="--i:2;"><a href='main.php'>Main
                         Dish</a><br /></li>
                 <li class="font-semibold  px-2 text-md xl:text-lg" id="navaos" style="--i:3;"><a href='side.php'>Side
                         Dish</a><br /></li>
                 <li class="font-semibold  px-2 text-md xl:text-lg" id="navaos" style="--i:4;"><a href='soup.php'>Soup</a><br />
                 </li>
-                <li class="font-semibold  px-2 text-md xl:text-lg" id="navaos" style="--i:5;"><a
-                        href='drink.php'>Drink</a><br /></li>
+                <li class="font-semibold  px-2 text-md xl:text-lg" id="navaos" style="--i:5;"><a href='drink.php'>Drink</a><br /></li>
                 <li class="font-semibold  px-2 text-md xl:text-lg" id="navaos" style="--i:5;"><a href='add.php'>Add
                         Menu</a><br /></li>
-                <?php
+            <?php
             } else {
-                ?>
+            ?>
                 <li class="font-semibold  px-2 text-md xl:text-lg" id="navaos" style="--i:2;"><a href='main.php'>Main
                         Dish</a><br /></li>
                 <li class="font-semibold  px-2 text-md xl:text-lg" id="navaos" style="--i:3;"><a href='side.php'>Side
                         Dish</a><br /></li>
                 <li class="font-semibold  px-2 text-md xl:text-lg" id="navaos" style="--i:4;"><a href='soup.php'>Soup</a><br />
                 </li>
-                <li class="font-semibold  px-2 text-md xl:text-lg" id="navaos" style="--i:5;"><a
-                        href='drink.php'>Drink</a><br /></li>
-                <li class="font-semibold  px-2 text-md xl:text-lg" id="navaos" style="--i:6;"><a href="about.php "
-                        class="font-semibold  px-2 text-md xl:text-lg">About Us</a></li>
-                <?php
+                <li class="font-semibold  px-2 text-md xl:text-lg" id="navaos" style="--i:5;"><a href='drink.php'>Drink</a><br /></li>
+                <li class="font-semibold  px-2 text-md xl:text-lg" id="navaos" style="--i:6;"><a href="about.php " class="font-semibold  px-2 text-md xl:text-lg">About Us</a></li>
+            <?php
             }
         } else { ?>
             <li class="font-semibold  px-2 text-md xl:text-lg" id="navaos" style="--i:2;"><a href='main.php'>Main
@@ -54,112 +56,91 @@ $stmt->execute([]);
                     Dish</a><br /></li>
             <li class="font-semibold  px-2 text-md xl:text-lg" id="navaos" style="--i:4;"><a href='soup.php'>Soup</a><br />
             </li>
-            <li class="font-semibold  px-2 text-md xl:text-lg" id="navaos" style="--i:5;"><a
-                    href='drink.php'>Drink</a><br /></li>
-            <li class="font-semibold  px-2 text-md xl:text-lg" id="navaos" style="--i:6;"><a href="about.php "
-                    class="font-semibold  px-2 text-md xl:text-lg">About Us</a></li>
-            <?php
+            <li class="font-semibold  px-2 text-md xl:text-lg" id="navaos" style="--i:5;"><a href='drink.php'>Drink</a><br /></li>
+            <li class="font-semibold  px-2 text-md xl:text-lg" id="navaos" style="--i:6;"><a href="about.php " class="font-semibold  px-2 text-md xl:text-lg">About Us</a></li>
+        <?php
         }
         ?>
     </ul>
     <div class="main">
         <?php
         if (!isset($_SESSION["id"]) && !isset($_SESSION["username"])) { ?>
-            <a href="login.php" id="navaosRight"
-                class="user font-semibold  px-2 text-md xl:text-lg text-black hover:text-[#ee3c20]" style="--i:7;"><i
-                    class="ri-user-fill"></i>Sign In</a>
-            <a href="#" onclick="toggle_cart()" id="navaosRight"
-                class="user font-semibold  px-2 text-md xl:text-lg text-black hover:text-[#ee3c20]" style="--i:8;"><i
-                    class="ri-shopping-cart-line"></i></a>
-            <?php
+            <a href="login.php" id="navaosRight" class="user font-semibold  px-2 text-md xl:text-lg text-black hover:text-[#ee3c20]" style="--i:7;"><i class="ri-user-fill"></i>Sign In</a>
+            <a href="#" onclick="toggle_cart()" id="navaosRight" class="user font-semibold  px-2 text-md xl:text-lg text-black hover:text-[#ee3c20]" style="--i:8;"><i class="ri-shopping-cart-line"></i></a>
+        <?php
         } else if ($_SESSION["username"] == 'admin') { ?>
-                <a href='logout.php' id="navaosRight"
-                    class="user font-semibold  px-2 text-md xl:text-lg text-black hover:text-[#ee3c20]" style="--i:7;"><i
-                        class="ri-user-fill"></i>Logout</a></li>
+            <a href='logout.php' id="navaosRight" class="user font-semibold  px-2 text-md xl:text-lg text-black hover:text-[#ee3c20]" style="--i:7;"><i class="ri-user-fill"></i>Logout</a></li>
         <?php } else { ?>
-                <a href='logout.php' id="navaosRight"
-                    class="user font-semibold  px-2 text-md xl:text-lg text-black hover:text-[#ee3c20]" style="--i:7;"><i
-                        class="ri-user-fill"></i>Logout</a></li>
-                <a href="#" onclick="toggle_cart()" id="navaosRight"
-                    class="user font-semibold  px-2 text-md xl:text-lg text-black hover:text-[#ee3c20]" style="--i:8;"><i
-                        class="ri-shopping-cart-line"></i></a>
-            <?php
+            <a href='logout.php' id="navaosRight" class="user font-semibold  px-2 text-md xl:text-lg text-black hover:text-[#ee3c20]" style="--i:7;"><i class="ri-user-fill"></i>Logout</a></li>
+            <a href="#" onclick="toggle_cart()" id="navaosRight" class="user font-semibold  px-2 text-md xl:text-lg text-black hover:text-[#ee3c20]" style="--i:8;"><i class="ri-shopping-cart-line"></i></a>
+        <?php
         }
         ?>
         <div class="bx bx-menu" id="menu-icon"></div>
     </div>
 </header>
-<div class='all' id='blur'>
-
-    <div class="bg-gray-200 p-4 h-full">
+<div class='all pt-4' id='blur'>
+    <div class=" p-4 h-full">
         <div class="container">
             <div class="menu-container">
                 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 w-full h-80">
                     <?php
                     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                         $foodID = $row['ID'];
-                        ?>
-                        <div class="bg-white rounded-lg p-4 shadow-lg food-card">
-                            <img class="w-full h-auto" src="./Food/<?= $row["Image Path"] ?>" alt="<?= $row["Food Name"] ?>"
-                                data-description="<?= $row["Description"] ?>" price="<?= $row["Price"] ?>"
-                                id="<?= $row["ID"] ?>">
-                            <p class="text-center">
+                    ?>
+                        <div class="bg-[#ebe0ce] shadow-6xl rounded-lg p-4 food-card">
+                            <img class="w-full h-auto" src="./Food/<?= $row["Image Path"] ?>" alt="<?= $row["Food Name"] ?>" data-description="<?= $row["Description"] ?>" price="<?= $row["Price"] ?>" id="<?= $row["ID"] ?>">
+                            <p class="text-center font-semibold">
                                 <?= $row["Food Name"] ?>
                             </p>
                         </div>
-
-                        <?php
+                    <?php
                     }
                     ?>
                 </div>
             </div>
-            <div class="detail bg-white rounded-lg p-4 shadow-lg text-center w-full">
-                <img id="food-image" class="w-full h-auto" src="" alt="Selected Food">
+            <div class="detail bg-[#ebe0ce] rounded-lg p-4  shadow-6xl  text-center w-full">
+                <img id="food-image" class="w-[100%] md:w-[90%] xl:w-[80%] md:pl-12 xl:pl-36 floating" src="" alt="Selected Food">
                 <br />
-                <b>
-                    <h2 id="food-name"></h2>
-                </b>
-                <br />
-                <p id="food-description"></p>
-                <br />
-                <div class="price flex gap-2">
-                    <p id="food-price"></p>
-                    <p>Mora</p>
+                <div class="flex md:flex-row flex-col justify-between px-5">
+                    <b><h2 id="food-name" class="text-md md:text-2xl xl:text-3xl "></h2></b>
+                    <div class="price flex gap-2 text-md md:text-2xl xl:text-3xl">
+                        <p id="food-price"></p>
+                        <p>Mora</p>
+                    </div>
                 </div>
-
+                <div class="pb-8"></div>
                 <?php
                 if (!isset($_SESSION["id"]) && !isset($_SESSION["username"])) {
-                    ?>
+                ?>
                     <div>
-                        <button class='bg-[#ee3c20] text-white px-2 py-1 rounded' onclick='openPopup()'>Choose</button>
+                        <button class='bg-[#ee3c20] lalala hover:bg-[#ebe0ce] hover:text-[#ee3c20] font-semibold text-white px-6 py-3 rounded-lg' onclick='openPopup()'>Choose</button>
                     </div>
                     <?php
                 } else {
                     if ($_SESSION["username"] == 'admin') {
-                        ?>
+                    ?>
                         <div class='flex justify-center gap-4 items-center mt-4'>
                             <form method='POST' action='edit.php'>
                                 <input type='hidden' name='id' id='food-id' value=''>
-                                <button type='submit' class='bg-[#ee3c20] text-white px-2 py-1 rounded'
-                                    name='edit'>Edit</button>
+                                <button type='submit' class='bg-[#ee3c20] lalala hover:bg-[#ebe0ce] hover:text-[#ee3c20] font-semibold text-white px-6 py-3 rounded-lg' name='edit'>Edit</button>
                             </form>
                             <form method='POST' action='delete_menu.php'>
                                 <input type='hidden' name='id' id='food-id-del' value=''>
-                                <button type='submit' class='bg-[#ee3c20] text-white px-2 py-1 rounded' value='main'
-                                    name='delete'>Delete</button>
+                                <button type='submit' class='bg-[#ee3c20] lalala hover:bg-[#ebe0ce] hover:text-[#ee3c20] font-semibold text-white px-6 py-3 rounded-lg' value='main' name='delete'>Delete</button>
                             </form>
                         </div>
-                        <?php
+                    <?php
                     } else {
-                        ?>
+                    ?>
                         <div>
-                            <button class='bg-[#ee3c20] text-white px-2 py-1 rounded' onclick='openPopup()'>Choose</button>
+                            <button class='bg-[#ee3c20] mr-3 lalala hover:bg-[#ebe0ce] hover:text-[#ee3c20] font-semibold text-white px-6 py-3 rounded-lg' onclick='openPopup()'>Choose</button>
                         </div>
-                        <?php
+                <?php
                     }
                 }
                 ?>
-
+                <p id="food-description" class="opacity-0"></p>
             </div>
 
         </div>
@@ -181,7 +162,7 @@ $stmt->execute([]);
         $totalAll = 0;
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             $total = $row['Price'] * $row['Qty'];
-            ?>
+    ?>
 
             <p class='card__desc'>
                 <?= $row['Food Name'] ?>
@@ -206,7 +187,7 @@ $stmt->execute([]);
                 </button>
             </form>
 
-            <?php
+        <?php
             $totalAll += $total;
         }
 
@@ -215,7 +196,7 @@ $stmt->execute([]);
         $stmt->execute([$_SESSION['id']]);
 
         if ($tempRow = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            ?>
+        ?>
             <p class='card__desc'>Total :
                 <?= $totalAll ?>
             </p>
@@ -223,17 +204,17 @@ $stmt->execute([]);
             <button class=''>
                 <a class='card__desc bg-[#ee3c20] text-white px-2 py-1 rounded' href='receipt.php'>Checkout</a>
             </button>
-            <?php
+        <?php
         }
     } else {
         ?>
         <p>You are not logged in, log in to view cart.</p>
         <a href='login.php'>Login</a>
-        <?php
+    <?php
     }
     ?>
 </div>
-<div id='popup'>
+<div id='popup' class="mt-1">
     <form method='POST' action='pesan_process.php' id='cart-form'>
         <input type='hidden' name='id' id='food-id-del' value=''>
         <input type='hidden' name='id' id='food-id' value=''>
@@ -241,7 +222,7 @@ $stmt->execute([]);
         <div class="whole">
             <div class="left">
                 <h2 id="popup-food-name"></h2>
-                <p id="popup-food-description"></p>
+                <p id="popup-food-description" class="text-justify mr-6 text-sm md:text-md"></p>
                 <div class="popup-price">
                     <p id="popup-food-price"></p>
                     <p>Mora</p>
@@ -251,21 +232,18 @@ $stmt->execute([]);
                 <img id="popup-food-image" class="" src="" alt="Selected Food">
                 <?php
                 if (!isset($_SESSION["id"]) && !isset($_SESSION["username"])) {
-                    ?>
-                    Log in to pesan
-                    <?php
+                ?>
+                    Log in to order
+                <?php
                 } else {
-                    ?>
+                ?>
                     <div class="value">
-                        <button type='button' class='bg-blue-500 text-white px-4 py-1 rounded'
-                            data-item='item-count-" . $foodID . "-decrement'>-</button>
-                        <input type='text' id='item-count-" . $foodID . "' name='item_count' value='1' readonly
-                            class='w-10 text-center mx-2'>
-                        <button type='button' class='bg-blue-500 text-white px-4 py-1 rounded'
-                            data-item='item-count-" . $foodID . "-increment'>+</button>
+                        <button type='button' class='bg-blue-500 text-white px-4 py-1 rounded' data-item='item-count-" . $foodID . "-decrement'>-</button>
+                        <input type='text' id='item-count-" . $foodID . "' name='item_count' value='1' readonly class='w-10 text-center bg-transparent mx-3'>
+                        <button type='button' class='bg-blue-500 text-white px-4 py-1 rounded' data-item='item-count-" . $foodID . "-increment'>+</button>
                     </div>
                     <div>
-                        <button type='submit' class='button' onclick='addFoodToCart()'>
+                        <button type='submit' class='button bg-[#ee3c20] rounded-xl' onclick='addFoodToCart()'>
                             <div class='text'>Add to Cart</div>
                             <div class="progress-bar"></div>
                             <svg x="0px" y="0px" viewBox="0 0 25 30" style="enable-background:new 0 0 25 30;">
@@ -273,20 +251,21 @@ $stmt->execute([]);
                             </svg>
                         </button>
                     </div>
-                    <?php
+                <?php
                 }
                 ?>
             </div>
     </form>
     <div class="closing">
         <a class="closing" href="#" onclick='togglePopup()'>
-            <button class="closeBtn">
-                <span class="X"></span>
-                <span class="Y"></span>
+            <button class="text-4xl pr-6 pt-6">&times;
+                <!-- <span class="X"></span>
+                <span class="Y"></span> -->
             </button>
         </a>
     </div>
 </div>
+
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.js'></script>
 
@@ -321,12 +300,12 @@ $stmt->execute([]);
         if (cart.classList.contains('active')) {
             cart.style.left = '150%';
 
-            setTimeout(function () {
+            setTimeout(function() {
                 cart.classList.remove('active');
             }, 500);
         } else {
             cart.style.left = '90%';
-            setTimeout(function () {
+            setTimeout(function() {
                 cart.classList.add('active');
             }, 0);
         }
@@ -456,11 +435,11 @@ $stmt->execute([]);
             easing: "easeInOutSine"
         });
 
-    $(".button").click(function () {
+    $(".button").click(function() {
         basicTimeline.play();
     });
 
-    $(".text").click(function () {
+    $(".text").click(function() {
         basicTimeline.play();
     });
 </script>
@@ -469,14 +448,14 @@ $stmt->execute([]);
     function addFoodToCart() {
         const delayInSeconds = 5;
         event.preventDefault();
-        setTimeout(function () {
+        setTimeout(function() {
             document.getElementById('cart-form').submit();
         }, delayInSeconds * 1000);
     }
 </script>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("DOMContentLoaded", function() {
         const urlParams = new URLSearchParams(window.location.search);
         const activeCart = urlParams.get("active");
 

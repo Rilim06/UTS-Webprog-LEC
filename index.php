@@ -89,9 +89,13 @@ session_start();
                     <h3 class="md:text-3xl  text-xl lg:text-2xl xl:text-4xl">Welcome <span class="multiple-text text-[#ee3c20]"></span></h3>
                     <p class="text-justify w-[80%] leading-8">Join us at Teyvat's Table for an unforgettable dining experience, where fantasy meets food, and every bite is a journey through Teyvat's enchanting landscapes. </p>
                     <div class="flex mt-10 gap-4 md:gap-7 lg:gap-5 xl:gap-8    ">
-                        <div class="cardeu xl:w-[220px] w-[150px] h-[130px] lg:h-[120px] lg:w-[200px] md:w-[250px] md:h-[150px] xl:h-[120px] rounded-2xl bg-[#e0e0e0] ">
+                        <div id="shinycard" class="cardeu omaomagod flex justify-center text-white items-center  text-sm md:text-md lg:text-lg xl:w-[170px] bg-[#ee3c20] w-[140px] h-[85px] lg:h-[90px] lg:w-[180px] md:w-[170px] md:h-[95px] xl:h-[90px] rounded-2xl bg-[#e0e0e0] ">
+                        <button onclick="navigateToSection(2)"><h1>Recommendations</h1></button>
+                            
                         </div>
-                        <div class="cardeur xl:w-[220px] w-[150px] h-[130px] lg:h-[120px] lg:w-[200px] md:w-[250px] md:h-[150px] xl:h-[120px] rounded-2xl bg-[#e0e0e0] ">
+                        <div id="shinycard" class="cardeur omaomagod flex justify-center text-white items-center text-sm  md:text-md lg:text-lg xl:w-[170px] bg-[#ee3c20] w-[140px] h-[85px] lg:h-[90px] lg:w-[180px] md:w-[170px] md:h-[95px] xl:h-[90px] rounded-2xl bg-[#e0e0e0] ">
+                        <button onclick="navigateToSection(3)"><h1>Categories</h1></button>
+
                         </div>
                     </div>
                 </div>
@@ -106,7 +110,7 @@ session_start();
             <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="fill-[#ee3c20]"></path>
         </svg>
     </div>
-    <section class="page-wrapper min-h-screen bg-[#ee3c20] pt-10 relative " id="wannabedev">
+    <section class="page-wrapper min-h-screen bg-[#ee3c20] pt-10 relative " id="section2">
         <div class="ourrec flex justify-center">
             <h1 class="text-3xl md:text-5xl">Our Recommendation</h1>
         </div>
@@ -203,7 +207,7 @@ session_start();
         </div>
     </section>
 
-    <section class="sec-01 min-h-screen relative bg-[#ebe0ce]">
+    <section class="sec-01 min-h-screen relative bg-[#ebe0ce]" id="section3">
         <div class="custom-shape-divider-top-1697999540">
             <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
                 <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="fill-[#ee3c20]"></path>
@@ -400,9 +404,9 @@ session_start();
                     </div>
                 </div>
                 <div class="image relative ml-0 lg:ml-10 xl:ml-0">
-                    <img src="./Food/Item_Zhongyuan_Chop_Suey.webp" id="updownfood" style="--a:1;" class="z-1 w-[95%] pl-8 md:ml-28 md:pt-20 md:w-[70%] lg:w-[75%] lg:ml-20 xl:w-[75%] xl:ml-20 xl:pt-2" alt="">
-                    <img src="./Food/Item_Bird_Egg_Sushi.webp" id="updownfood" style="--a:2;" class="z-2 w-[100%] pr-20 pt-20 md:pt-60 md:w-[85%] md:pr-40 lg:pt-40 lg:pr-16 lg:w-[75%] xl:w-[200%] xl:pr-52 xl:pt-32" alt="">
-                    <img src="./Food/Item_Crab_Roe_Kourayaki.webp" id="updownfood" style="--a:3;" class="z-3 w-[95%] pt-40 pl-28 md:pt-80 md:pl-40 md:w-[90%] lg:pt-60 lg:ml-20 lg:w-[80%] xl:w-[85%] xl:pt-48 xl:ml-20" alt="">
+                    <img src="./Food/Item_Zhongyuan_Chop_Suey.webp" id="updownfood" style="--a:1;" class="z-1 w-[95%] pl-8 md:ml-28 md:pt-10 md:w-[70%] lg:w-[75%] lg:ml-20 xl:w-[75%] xl:ml-20 xl:pt-2" alt="">
+                    <img src="./Food/Item_Bird_Egg_Sushi.webp" id="updownfood" style="--a:2;" class="z-2 w-[100%] pr-20 pt-20 md:pt-40 md:w-[85%] md:pr-40 lg:pt-40 lg:pr-16 lg:w-[75%] xl:w-[200%] xl:pr-52 xl:pt-32" alt="">
+                    <img src="./Food/Item_Crab_Roe_Kourayaki.webp" id="updownfood" style="--a:3;" class="z-3 w-[95%] pt-40 pl-28 md:pt-48 md:pl-40 md:w-[90%] lg:pt-60 lg:ml-16 lg:w-[90%] xl:w-[90%] xl:pt-48 xl:ml-20" alt="">
                 </div>
             </div>
         </div>
@@ -470,6 +474,17 @@ session_start();
         ?>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script>
+        function navigateToSection(sectionNumber) {
+            // Get the section by its ID
+            const section = document.getElementById(`section${sectionNumber}`);
+
+            if (section) {
+                // Scroll to the section
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
     <script>
         ScrollReveal({
             reset: true,

@@ -5,6 +5,7 @@
     background-size: 100% 100%; */
     background-color: #ebe0ce;
 }
+
 .awal2 {
     /* background-image: url(../img/2.png);
     background-position: center;
@@ -17,6 +18,43 @@ body {
     overflow-x: hidden;
     width: 100vw;
 }
+
+#shinycard {
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+#shinycard:before {
+    content: '';
+    position: absolute;
+    height: 600%;
+    width: 0.6em;
+    background-color: aliceblue;
+    opacity: 0.3;
+    animation: glider 1.8s infinite linear;
+    animation-delay: 0.05s;
+}
+
+#shinycard:after {
+    content: '';
+    position: absolute;
+    height: 600%;
+    width: 0.4em;
+    background-color: aliceblue;
+    opacity: 0.2;
+    animation: glider 1.8s infinite linear;
+}
+
+@keyframes glider {
+    0% {
+        transform: rotate(45deg) translate(-140px, -140px);
+    }
+
+    100% {
+        transform: rotate(45deg) translate(220px, -40px);
+    }
+}
+
 
 #frontpage {
     width: 100vw;
@@ -51,6 +89,16 @@ section#frontpage[ready] {
     animation: slideTop 1s ease forwards;
     opacity: 0;
     animation-delay: .6s;
+}
+
+.omaomagod{
+    transition: .5s ease;
+    scale: 1;
+    cursor: pointer;
+}
+.omaomagod:hover{
+    transition: .5s ease;
+    scale: 1.05;
 }
 
 .cardeur {
@@ -180,6 +228,7 @@ section#frontpage[ready] {
         transform: translateY(0);
     }
 }
+
 /* 
 .leaves {
     width: 100%;
