@@ -2,18 +2,6 @@
 session_start();
 require_once("db.php");
 
-if (!isset($_SESSION["id"]) && !isset($_SESSION["username"])) {
-    if ($_POST['pesan'] == 'add_food') {
-        header("Location: food.php?error=error");
-        exit;
-    } else {
-        if ($_POST['pesan'] == 'add_drink') {
-            header("Location: drink.php?error=error");
-            exit;
-        }
-    }
-}
-
 $id = $_POST['id'];
 $sql = "SELECT * FROM foods WHERE id = ?";
 
@@ -21,7 +9,6 @@ $stmt = $db->prepare($sql);
 $stmt->execute([$id]);
 $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-// Insert to Database
 $sql = "SELECT * FROM cart WHERE id_user = ? AND `Food Name` = ?";
 $stmt = $db->prepare($sql);
 $stmt->execute([$_SESSION['id'], $row['Food Name']]);
@@ -39,19 +26,13 @@ if ($tempRow = $stmt->fetch(PDO::FETCH_ASSOC)) {
     $stmt->execute([$row['Food Name'], $row['Category'], $row['Price'], $_POST['item_count'], $_SESSION['id'], $_POST['id']]);
 }
 
-$total = $_POST['item_count'] * $row['Price'];
-echo "Berhasil memesan<br />";
-echo $row['Food Name'] . " x " . $_POST['item_count'] . "<br />";
-echo "Total : " . $total;
-
-echo "<br /><br />";
-
-echo "<a href='cart.php'>Cart</a>";
-
-echo "<br />";
-if ($_POST['pesan'] == 'add_food') {
-    echo "<a href='food.php'>Back</a>";
+if ($_POST['pesan'] == 'add_main') {
+    header("Location: main.php");
+} else if ($_POST['pesan'] == 'add_side') {
+    header("Location: side.php");
+} else if ($_POST['pesan'] == 'add_soup') {
+    header("Location: soup.php");
 } else {
-    echo "<a href='drink.php'>Back</a>";
+    header("Location: drink.php");
 }
 ?>

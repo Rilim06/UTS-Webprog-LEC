@@ -1,0 +1,236 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
+header {
+    color: black;
+    position: fixed;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+    width: calc(100% - 20px);
+    z-index: 1000;
+    display: flex;
+    height: 12vh;
+    align-items: center;
+    justify-content: space-between;
+    background: #ebe0ce;
+    padding: 20px 5%;
+    transition: all 0.5s ease;
+    font-family: "Poppins", sans-serif;
+}
+@keyframes slideBottom {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo i {
+    margin-right: 3px;
+}
+
+.navbar {
+    display: flex;
+}
+
+.navbar a {
+    padding: 5px 0;
+    opacity: 0;
+    margin: 0 30px;
+    transition: all 0.5s ease;
+    display: inline-block;
+    animation: slideTop .5s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+#navaosRight{
+    opacity: 0;
+    animation: slideTop .5s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+@keyframes slideTop {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes slideLeft {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+#logoaos{
+    opacity: 0;
+    animation: slideRight .5s ease forwards;
+    animation-delay: 0.2s;
+}
+
+@keyframes slideRight {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.navbar a:hover {
+    color: #ee3c20;
+}
+
+.navbar a .active {
+    color: #ee3c20;
+}
+
+.main {
+    display: flex;
+    align-items: center;
+}
+
+.main a {
+    margin-right: 25px;
+    margin-left: 25px;
+    transition: all 0.5s ease;
+}
+
+
+.main .user {
+    display: flex;
+    align-items: center;
+}
+
+.main .user i {
+    color: black;
+    font-size: 28px;
+    margin-right: 7px;
+}
+
+.main .user i:hover {
+    color: #ee3c20;
+}
+
+#menu-icon {
+    cursor: pointer;
+    z-index: 10001;
+    display: none;
+}
+#headeraos{
+    opacity: 0;
+    animation: slideBottom 1s ease forwards;
+}
+@media (max-width: 1280px) {
+    header {
+        padding: 14px 2%;
+        transition: 0.2s;
+        height: 7vh;
+    }
+
+    .navbar a {
+        padding: 5px 0;
+        margin: 0 20px;
+    }
+}
+
+@media (max-width: 1440px) {
+    header {
+        height: 8vh;
+    }
+}
+
+@media (max-width: 1024px) {
+    #menu-icon {
+        display: block;
+        padding-right: 20px;
+        font-size: 200%;
+    }
+    .logo{
+        padding-left: 20px;
+    }
+    .header {
+        height: 5vh;
+    }
+
+    .navbar {
+        position: absolute;
+        margin-top: 50px;
+        top: 0;
+        right: -100%;
+        background: var(--almond);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        border-radius: 10px;
+        transition: all 0.5s ease;
+    }
+
+    .navbar a {
+        display: block;
+        margin: 12px 0;
+        padding: 0 25px;
+        transition: all 0.5s ease;
+    }
+
+    .navbar a:hover {
+        color: black;
+        transform: translateY(-2px);
+    }
+
+    .navbar a .active {
+        color: black;
+    }
+
+    .navbar.open {
+        margin-top: 100px;
+        right: 2%;
+        display: inline-block;
+        color: #010101;
+        background: #fff;
+        border-radius: 20px;
+      }
+}
+
+#slide-cart {
+    position: fixed;
+    left: 150%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 100%;
+    padding: 50px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+    background: #fff;
+    visibility: hidden;
+    opacity: 0;
+    transition: left 0.5s;
+    overflow-y: auto;
+    z-index: 99999999999;
+}
+
+#slide-cart.active {
+    left: 90%;
+    top: 50%;
+    visibility: visible;
+    opacity: 1;
+}

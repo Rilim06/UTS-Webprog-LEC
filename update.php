@@ -35,8 +35,12 @@ $stmt = $db->prepare($sql);
 $data = [$_POST['name'], $_POST['category'], $_POST['price'], $foto, $_POST['description'], $_POST['id']];
 $stmt->execute($data);
 
-if ($_POST['category'] == 'Food') {
-    header("Location: food.php");
+if ($_POST['category'] == 'Main Dish') {
+    header("Location: main.php");
+} else if ($_POST['category'] == 'Side Dish') {
+    header("Location: side.php");
+} else if ($_POST['category'] == 'Soup') {
+    header("Location: soup.php");
 } else {
     header("Location: drink.php");
 }
