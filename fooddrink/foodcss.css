@@ -35,7 +35,7 @@ body {
     padding: 16px;
     margin-left: 15px;
     height: 80vh;
-    /* overflow-y: auto; */
+    overflow-y: auto;
 }
 
 .feature {
@@ -94,9 +94,6 @@ body {
     }
 }
 
-.detail{
-    overflow-y: hidden;
-}
 
 .lalala{
     transition: .4s ease;

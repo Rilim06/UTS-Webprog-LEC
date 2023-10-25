@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once("db.php")
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,10 +18,10 @@ session_start();
     <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
     <link rel="stylesheet" href="navbar/stylenavbar.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
-
     <link rel="stylesheet" type="text/css" href="section2/css/demo.css" />
     <link rel="stylesheet" type="text/css" href="section1/section1.css" />
     <link rel="stylesheet" type="text/css" href="aos/styleaos.css" />
+    <link rel="stylesheet" type="text/css" href="footer/footer.css" />
     <link rel="stylesheet" type="text/css" href="slider/slider.css" />
     <script src="https://unpkg.com/scrollreveal"></script>
 </head>
@@ -90,11 +91,15 @@ session_start();
                     <p class="text-justify w-[80%] leading-8">Join us at Teyvat's Table for an unforgettable dining experience, where fantasy meets food, and every bite is a journey through Teyvat's enchanting landscapes. </p>
                     <div class="flex mt-10 gap-4 md:gap-7 lg:gap-5 xl:gap-8    ">
                         <div id="shinycard" class="cardeu omaomagod flex justify-center text-white items-center  text-sm md:text-md lg:text-lg xl:w-[170px] bg-[#ee3c20] w-[140px] h-[85px] lg:h-[90px] lg:w-[180px] md:w-[170px] md:h-[95px] xl:h-[90px] rounded-2xl bg-[#e0e0e0] ">
-                        <button onclick="navigateToSection(2)"><h1>Recommendations</h1></button>
-                            
+                            <button onclick="navigateToSection(2)">
+                                <h1>Recommendations</h1>
+                            </button>
+
                         </div>
                         <div id="shinycard" class="cardeur omaomagod flex justify-center text-white items-center text-sm  md:text-md lg:text-lg xl:w-[170px] bg-[#ee3c20] w-[140px] h-[85px] lg:h-[90px] lg:w-[180px] md:w-[170px] md:h-[95px] xl:h-[90px] rounded-2xl bg-[#e0e0e0] ">
-                        <button onclick="navigateToSection(3)"><h1>Categories</h1></button>
+                            <button onclick="navigateToSection(3)">
+                                <h1>Categories</h1>
+                            </button>
 
                         </div>
                     </div>
@@ -215,7 +220,7 @@ session_start();
         </div>
         <div class="containeraos flex items-center justify-center ">
             <div class="ourbev flex justify-center pt-40">
-                <h1 class="text-3xl md:text-5xl">Main Dish</h1>
+                <h1 class="text-3xl md:text-5xl"><a href="main.php">Main Dish</a></h1>
             </div>
             <div class="contentaos pt-10 md:ml-20 lg:ml-0 flex flex-col lg:flex-row">
                 <div class="image relative ml-0 lg:ml-10 xl:ml-0">
@@ -391,7 +396,7 @@ session_start();
     <section class="sec-01 min-h-screen relative bg-[#ebe0ce]">
         <div class="containeraos flex items-center justify-center ">
             <div class="ourbev flex justify-center pt-36">
-                <h1 class="text-3xl md:text-5xl text-[#]">Side Dish</h1>
+                <h1 class="text-3xl md:text-5xl text-[#]"><a href="side.php">Side Dish</a></h1>
             </div>
             <div class="contentaos  md:ml-20 lg:ml-0 flex flex-col lg:flex-row">
                 <div class="text-box shadow-xl rounded-2xl w-[300px] md:w-[400px] font-bold ml-16 md:ml-16 lg:ml-4 mb-20">
@@ -411,68 +416,76 @@ session_start();
             </div>
         </div>
     </section>
-    <div id="slide-cart">
-        <a href="#" onclick="toggle_cart()">Close</a>
-        <h1>My Cart</h1>
-        <?php
-        if (isset($_SESSION["id"]) && isset($_SESSION["username"])) {
-            $sql = "SELECT * FROM cart WHERE id_user = ?";
+    <section class="sec-01 min-h-screen relative bg-[#ebe0ce]" id="section3">
+        <div class="containeraos flex items-center justify-center ">
+            <div class="ourbev flex justify-center pt-20">
+                <h1 class="text-3xl md:text-5xl"><a href="soup.php">Soup</a></h1>
+            </div>
+            <div class="contentaos pt-10 md:ml-20 lg:ml-0 flex flex-col lg:flex-row">
+                <div class="image relative ml-0 lg:ml-10 xl:ml-0">
+                    <img src="./Food/Item_Bamboo_Shoot_Soup.webp" id="updownfood" style="--a:1;" class="z-1 w-[95%] pl-8 md:ml-28 md:pt-20 md:w-[70%] lg:w-[75%] lg:ml-20 xl:w-[75%] xl:ml-20 xl:pt-2" alt="">
+                    <img src="./Food/Item_Black-Back_Perch_Stew.webp" id="updownfood" style="--a:2;" class="z-2 w-[100%] pr-20 pt-20 md:pt-60 md:w-[85%] md:pr-40 lg:pt-40 lg:pr-16 lg:w-[75%] xl:w-[200%] xl:pr-52 xl:pt-32" alt="">
+                    <img src="./Food/Item_Jade_Fruit_Soup.webp" id="updownfood" style="--a:3;" class="z-3 w-[95%] pt-40 pl-28 md:pt-80 md:pl-40 md:w-[90%] lg:pt-60 lg:ml-20 lg:w-[80%] xl:w-[85%] xl:pt-48 xl:ml-20" alt="">
+                </div>
+                <div class="text-box shadow-xl rounded-2xl w-[300px] md:w-[400px] font-bold ml-16 md:ml-16 lg:ml-4 mb-20">
+                    <div class="textboxC"></div>
+                    <img src="./img/Paimon.webp" alt="" class="w-[40%] absolute ml-60 pb-20">
+                    <h1 class="text-3xl pb-8 text-[#ee3c20]">Soup</h1>
 
-            $stmt = $db->prepare($sql);
-            $stmt->execute([$_SESSION['id']]);
-
-            $totalAll = 0;
-            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                $total = $row['Price'] * $row['Qty'];
-        ?>
-
-                <p>
-                    <?= $row['Food Name'] ?>
-                </p>
-                <p>
-                    <?= $row['Price'] ?>
-                </p>
-                <p>
-                    <?= $row['Category'] ?>
-                </p>
-                <p>Harga :
-                    <?= $row['Price'] ?> x
-                    <?= $row['Qty'] ?> =
-                    <?= $total ?>
-                </p>
-
-                <form action='delete_cart.php' method='POST'>
-                    <input type='hidden' name='cart-name' value='main'></input>
-                    <input type='hidden' name='id' value='<?= $row['id'] ?>'>
-                    <button type='submit'>Remove from cart</button>
-                </form>
-                <br>
-
-            <?php
-                $totalAll += $total;
-            }
-
-            $sql = "SELECT * FROM cart WHERE id_user = ?";
-            $stmt = $db->prepare($sql);
-            $stmt->execute([$_SESSION['id']]);
-
-            if ($tempRow = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            ?>
-                <p>Total :
-                    <?= $totalAll ?>
-                </p>
-                <br>
-                <a href='receipt.php'>Checkout</a>
-            <?php
-            }
-        } else {
-            ?>
-            <p>You are not logged in, log in to view cart.</p>
-            <a href='login.php'>Login</a>
-        <?php
-        }
-        ?>
-    </div>
+                    <p class="font-semibold text-justify">Savor the essence of Teyvat "Harmony of the Elements Platter," a diverse menu and delectable soup that combines flavors from across the realm in one captivating culinary experience.</p>
+                    <div class="contentbox">
+                        <a href="soup.php" class="shadow-2xl pt-10">Open catalog</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="h-[8vh] md:h-[10vh] lg:h-[15vh] xl:h-[11vh] relative bg-[#ebe0ce]">
+        <div class="line relative overflow-hidden bg-cover h-[20vh] w-screen z-100">
+            <div class="waveani wave1 absolute left-0 z-15"></div>
+            <div class="waveani wave2 absolute left-0 z-10"></div>
+            <div class="waveani wave3 absolute left-0 z-5"></div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="containerfoot">
+            <div class="rowfoot mt-32">
+                <div class="footer-col">
+                    <h4 class="md:text-[20px] lg:text-[24px]">Restoran IF 330</h4>
+                    <ul>
+                        <li><a href="#">Copyright &copy; 2023 by A5</a></li>
+                        <li><a href="https://www.umn.ac.id/">Based from UMN</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="md:text-[20px] lg:text-[24px]">Recommendation</h4>
+                    <ul>
+                        <li><a href="drink.php">Sparking Berry Juice</a></li>
+                        <li><a href="drink.php">Fonta</a></li>
+                        <li><a href="drink.php">Dango Milk</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="md:text-[20px] lg:text-[24px]">Categories</h4>
+                    <ul>
+                        <li><a href="main.php">Main Dish</a></li>
+                        <li><a href="side.php">Side Dish</a></li>
+                        <li><a href="drink.php">Beverages</a></li>
+                        <li><a href="soup.php">Soup</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="md:text-[20px] lg:text-[24px]">About Us</h4>
+                    <ul>
+                        <li><a href="about.php">Jackson Lawrence</a></li>
+                        <li><a href="about.php">Hans Philemon Limanza</a></li>
+                        <li><a href="about.php">Louis Gabriel Hernandes</a></li>
+                        <li><a href="about.php">Rich Marvin Lim</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <script>
         function navigateToSection(sectionNumber) {
@@ -481,7 +494,9 @@ session_start();
 
             if (section) {
                 // Scroll to the section
-                section.scrollIntoView({ behavior: 'smooth' });
+                section.scrollIntoView({
+                    behavior: 'smooth'
+                });
             }
         }
     </script>
@@ -700,6 +715,85 @@ session_start();
             element: document.querySelector(".slider")
         });
     </script>
+    <script type='text/javascript'>
+        function toggle_cart() {
+            var cart = document.getElementById('slide-cart');
+            if (cart.classList.contains('active')) {
+                cart.style.left = '150%';
+
+                setTimeout(function() {
+                    cart.classList.remove('active');
+                }, 500);
+            } else {
+                cart.style.left = '90%';
+                setTimeout(function() {
+                    cart.classList.add('active');
+                }, 0);
+            }
+        }
+    </script>
+    <div id="slide-cart">
+        <a href="#" onclick="toggle_cart()">Close</a>
+        <h1>My Cart</h1>
+        <?php
+        if (isset($_SESSION["id"]) && isset($_SESSION["username"])) {
+            $sql = "SELECT * FROM cart WHERE id_user = ?";
+
+            $stmt = $db->prepare($sql);
+            $stmt->execute([$_SESSION['id']]);
+
+            $totalAll = 0;
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                $total = $row['Price'] * $row['Qty'];
+        ?>
+
+                <p>
+                    <?= $row['Food Name'] ?>
+                </p>
+                <p>
+                    <?= $row['Price'] ?>
+                </p>
+                <p>
+                    <?= $row['Category'] ?>
+                </p>
+                <p>Harga :
+                    <?= $row['Price'] ?> x
+                    <?= $row['Qty'] ?> =
+                    <?= $total ?>
+                </p>
+
+                <form action='delete_cart.php' method='POST'>
+                    <input type='hidden' name='cart-name' value='main'></input>
+                    <input type='hidden' name='id' value='<?= $row['id'] ?>'>
+                    <button type='submit'>Remove from cart</button>
+                </form>
+                <br>
+
+            <?php
+                $totalAll += $total;
+            }
+
+            $sql = "SELECT * FROM cart WHERE id_user = ?";
+            $stmt = $db->prepare($sql);
+            $stmt->execute([$_SESSION['id']]);
+
+            if ($tempRow = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            ?>
+                <p>Total :
+                    <?= $totalAll ?>
+                </p>
+                <br>
+                <a href='receipt.php'>Checkout</a>
+            <?php
+            }
+        } else {
+            ?>
+            <p>You are not logged in, log in to view cart.</p>
+            <a href='login.php'>Login</a>
+        <?php
+        }
+        ?>
+    </div>
     <script type="text/javascript">
         let menu = document.querySelector('#menu-icon');
         let navbar = document.querySelector('.navbar');
@@ -719,23 +813,7 @@ session_start();
             loop: true
         })
     </script>
-    <script type='text/javascript'>
-        function toggle_cart() {
-            var cart = document.getElementById('slide-cart');
-            if (cart.classList.contains('active')) {
-                cart.style.left = '150%';
 
-                setTimeout(function() {
-                    cart.classList.remove('active');
-                }, 500);
-            } else {
-                cart.style.left = '90%';
-                setTimeout(function() {
-                    cart.classList.add('active');
-                }, 0);
-            }
-        }
-    </script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
