@@ -278,3 +278,37 @@
 .tranding-slider-control2 .swiper-pagination2 .swiper-pagination2-bullet-active {
     background: var(--primary);
 }
+
+#slide-cart {
+    position: fixed;
+    left: 150%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 100%;
+    padding: 50px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+    visibility: hidden;
+    opacity: 0;
+    transition: left 0.5s;
+    overflow-y: auto;
+    background: url("./../img/bgrcpt.png");
+    background-size: cover;
+    z-index: 99999999999;
+}
+
+#slide-cart.active {
+    left: 90%;
+    top: 50%;
+    visibility: visible;
+    opacity: 1;
+}
+
+.card__desc{
+    color: black;
+}
+
+.card__title {
+    font-size: 24px;
+    color: #ee3c20;
+    font-weight: 700;
+}

@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once("db.php")
-?>
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,46 +30,68 @@ require_once("db.php")
     <header id="headeraos" class="shadow-xl">
         <a href="#" class="logo font-semibold" id="logoaos"><span>IF 330 - A5</span></a>
         <ul class="navbar">
-            <li class="font-semibold text-[#ee3c20]  px-2 text-md xl:text-lg" id="navaos" style="--i:1;"><a href="index.php" class="active">Home</a><br /></li>
+            <li class="font-semibold text-[#ee3c20]  px-2 text-md xl:text-lg" id="navaos" style="--i:1;"><a
+                    href="index.php" class="active">Home</a><br /></li>
             <?php
             if (isset($_SESSION["id"]) && isset($_SESSION["username"])) {
                 if ($_SESSION["username"] == 'admin') {
-            ?>
-                    <li class="font-semibold  px-2 text-md xl:text-lg" id="navaos" style="--i:2;"><a href='main.php'>Main Dish</a><br /></li>
-                    <li class="font-semibold  px-2 text-md xl:text-lg" id="navaos" style="--i:3;"><a href='side.php'>Side Dish</a><br /></li>
-                    <li class="font-semibold  px-2 text-md xl:text-lg" id="navaos" style="--i:4;"><a href='soup.php'>Soup</a><br /></li>
-                    <li class="font-semibold  px-2 text-md xl:text-lg" id="navaos" style="--i:5;"><a href='drink.php'>Drink</a><br /></li>
-                <?php
+                    ?>
+                    <li class="font-semibold  px-2 text-md xl:text-lg" id="navaos" style="--i:2;"><a href='main.php'>Main
+                            Dish</a><br /></li>
+                    <li class="font-semibold  px-2 text-md xl:text-lg" id="navaos" style="--i:3;"><a href='side.php'>Side
+                            Dish</a><br /></li>
+                    <li class="font-semibold  px-2 text-md xl:text-lg" id="navaos" style="--i:4;"><a
+                            href='soup.php'>Soup</a><br /></li>
+                    <li class="font-semibold  px-2 text-md xl:text-lg" id="navaos" style="--i:5;"><a
+                            href='drink.php'>Drink</a><br /></li>
+                    <?php
                 } else {
-                ?>
-                    <li class="font-semibold  px-2 text-md xl:text-lg" id="navaos" style="--i:2;"><a href='main.php'>Main Dish</a><br /></li>
-                    <li class="font-semibold  px-2 text-md xl:text-lg" id="navaos" style="--i:3;"><a href='side.php'>Side Dish</a><br /></li>
-                    <li class="font-semibold  px-2 text-md xl:text-lg" id="navaos" style="--i:4;"><a href='soup.php'>Soup</a><br /></li>
-                    <li class="font-semibold  px-2 text-md xl:text-lg" id="navaos" style="--i:5;"><a href='drink.php'>Drink</a><br /></li>
+                    ?>
+                    <li class="font-semibold  px-2 text-md xl:text-lg" id="navaos" style="--i:2;"><a href='main.php'>Main
+                            Dish</a><br /></li>
+                    <li class="font-semibold  px-2 text-md xl:text-lg" id="navaos" style="--i:3;"><a href='side.php'>Side
+                            Dish</a><br /></li>
+                    <li class="font-semibold  px-2 text-md xl:text-lg" id="navaos" style="--i:4;"><a
+                            href='soup.php'>Soup</a><br /></li>
+                    <li class="font-semibold  px-2 text-md xl:text-lg" id="navaos" style="--i:5;"><a
+                            href='drink.php'>Drink</a><br /></li>
                     <!-- <li class="font-semibold  px-2 text-md xl:text-lg" id="navaos" style="--i:4;"><a href='cart.php'>Cart</a><br /></li> -->
-                <?php
+                    <?php
                 }
             } else { ?>
-                <li class="font-semibold  px-2 text-md xl:text-lg" id="navaos" style="--i:2;"><a href='main.php'>Main Dish</a><br /></li>
-                <li class="font-semibold  px-2 text-md xl:text-lg" id="navaos" style="--i:3;"><a href='side.php'>Side Dish</a><br /></li>
-                <li class="font-semibold  px-2 text-md xl:text-lg" id="navaos" style="--i:4;"><a href='soup.php'>Soup</a><br /></li>
-                <li class="font-semibold  px-2 text-md xl:text-lg" id="navaos" style="--i:5;"><a href='drink.php'>Drink</a><br /></li>
+                <li class="font-semibold  px-2 text-md xl:text-lg" id="navaos" style="--i:2;"><a href='main.php'>Main
+                        Dish</a><br /></li>
+                <li class="font-semibold  px-2 text-md xl:text-lg" id="navaos" style="--i:3;"><a href='side.php'>Side
+                        Dish</a><br /></li>
+                <li class="font-semibold  px-2 text-md xl:text-lg" id="navaos" style="--i:4;"><a
+                        href='soup.php'>Soup</a><br /></li>
+                <li class="font-semibold  px-2 text-md xl:text-lg" id="navaos" style="--i:5;"><a
+                        href='drink.php'>Drink</a><br /></li>
                 <!-- <li class="font-semibold  px-2 text-md xl:text-lg" id="navaos" style="--i:4;"><a href='cart.php'>Cart</a><br /></li> -->
-            <?php
+                <?php
             }
             ?>
-            <li class="font-semibold  px-2 text-md xl:text-lg" id="navaos" style="--i:6;"><a href="about.php " class="font-semibold  px-2 text-md xl:text-lg">About Us</a></li>
+            <li class="font-semibold  px-2 text-md xl:text-lg" id="navaos" style="--i:6;"><a href="about.php "
+                    class="font-semibold  px-2 text-md xl:text-lg">About Us</a></li>
         </ul>
         <div class="main">
             <?php
             if (!isset($_SESSION["id"]) && !isset($_SESSION["nim"])) { ?>
-                <a href="login.php" id="navaosRight" class="user font-semibold  px-2 text-md xl:text-lg text-black hover:text-[#ee3c20]" style="--i:7;"><i class="ri-user-fill"></i>Sign In</a>
-                <a href="#" onclick="toggle_cart()" id="navaosRight" class="user font-semibold  px-2 text-md xl:text-lg text-black hover:text-[#ee3c20]" style="--i:8;"><i class="ri-shopping-cart-line"></i></a>
+                <a href="login.php" id="navaosRight"
+                    class="user font-semibold  px-2 text-md xl:text-lg text-black hover:text-[#ee3c20]" style="--i:7;"><i
+                        class="ri-user-fill"></i>Sign In</a>
+                <a href="#" onclick="toggle_cart()" id="navaosRight"
+                    class="user font-semibold  px-2 text-md xl:text-lg text-black hover:text-[#ee3c20]" style="--i:8;"><i
+                        class="ri-shopping-cart-line"></i></a>
                 <!-- <li id="navaos" ><a href='cart.php'><i class="fas icon-park-outline:shopping"></i>Cart</a><br /></li> -->
-            <?php
+                <?php
             } else { ?>
-                <a href='logout.php' id="navaosRight" class="user font-semibold  px-2 text-md xl:text-lg text-black hover:text-[#ee3c20]" style="--i:7;"><i class="ri-user-fill"></i>Logout</a></li>
-                <a href="#" onclick="toggle_cart()" id="navaosRight" class="user font-semibold  px-2 text-md xl:text-lg text-black hover:text-[#ee3c20]" style="--i:8;"><i class="ri-shopping-cart-line"></i></a>
+                <a href='logout.php' id="navaosRight"
+                    class="user font-semibold  px-2 text-md xl:text-lg text-black hover:text-[#ee3c20]" style="--i:7;"><i
+                        class="ri-user-fill"></i>Logout</a></li>
+                <a href="#" onclick="toggle_cart()" id="navaosRight"
+                    class="user font-semibold  px-2 text-md xl:text-lg text-black hover:text-[#ee3c20]" style="--i:8;"><i
+                        class="ri-shopping-cart-line"></i></a>
                 <!-- <li id="navaos" style="--i:8;"><a href='cart.php'><i class="fas icon-park-outline:shopping"></i>Cart</a><br /></li> -->
             <?php }
             ?>
@@ -84,19 +106,26 @@ require_once("db.php")
 
             <div class="flex justify-between">
                 <div class="home-content ml-0 md:ml-7 lg:m-8 xl:ml-16 leading-loose">
-                    <h3 class="md:text-3xl pb-5 text-[#ee3c20] text-2xl md:pb-12 lg:text-xl xl:text-2xl lg:pb-8 xl:pb-10">
+                    <h3
+                        class="md:text-3xl pb-5 text-[#ee3c20] text-2xl md:pb-12 lg:text-xl xl:text-2xl lg:pb-8 xl:pb-10">
                         Ad astra abyssosque</h3>
-                    <h1 class="md:text-6xl pb-3 text-4xl md:pb-3 lg:text-5xl xl:text-6xl lg:pb-1 xl:pb-2">Restoran IF330</h1>
-                    <h3 class="md:text-3xl  text-xl lg:text-2xl xl:text-4xl">Welcome <span class="multiple-text text-[#ee3c20]"></span></h3>
-                    <p class="text-justify w-[80%] leading-8">Join us at Teyvat's Table for an unforgettable dining experience, where fantasy meets food, and every bite is a journey through Teyvat's enchanting landscapes. </p>
+                    <h1 class="md:text-6xl pb-3 text-4xl md:pb-3 lg:text-5xl xl:text-6xl lg:pb-1 xl:pb-2">Restoran IF330
+                    </h1>
+                    <h3 class="md:text-3xl  text-xl lg:text-2xl xl:text-4xl">Welcome <span
+                            class="multiple-text text-[#ee3c20]"></span></h3>
+                    <p class="text-justify w-[80%] leading-8">Join us at Teyvat's Table for an unforgettable dining
+                        experience, where fantasy meets food, and every bite is a journey through Teyvat's enchanting
+                        landscapes. </p>
                     <div class="flex mt-10 gap-4 md:gap-7 lg:gap-5 xl:gap-8    ">
-                        <div id="shinycard" class="cardeu omaomagod flex justify-center text-white items-center  text-sm md:text-md lg:text-lg xl:w-[170px] bg-[#ee3c20] w-[140px] h-[85px] lg:h-[90px] lg:w-[180px] md:w-[170px] md:h-[95px] xl:h-[90px] rounded-2xl bg-[#e0e0e0] ">
+                        <div id="shinycard"
+                            class="cardeu omaomagod flex justify-center text-white items-center  text-sm md:text-md lg:text-lg xl:w-[170px] bg-[#ee3c20] w-[140px] h-[85px] lg:h-[90px] lg:w-[180px] md:w-[170px] md:h-[95px] xl:h-[90px] rounded-2xl bg-[#e0e0e0] ">
                             <button onclick="navigateToSection(2)">
                                 <h1>Recommendations</h1>
                             </button>
 
                         </div>
-                        <div id="shinycard" class="cardeur omaomagod flex justify-center text-white items-center text-sm  md:text-md lg:text-lg xl:w-[170px] bg-[#ee3c20] w-[140px] h-[85px] lg:h-[90px] lg:w-[180px] md:w-[170px] md:h-[95px] xl:h-[90px] rounded-2xl bg-[#e0e0e0] ">
+                        <div id="shinycard"
+                            class="cardeur omaomagod flex justify-center text-white items-center text-sm  md:text-md lg:text-lg xl:w-[170px] bg-[#ee3c20] w-[140px] h-[85px] lg:h-[90px] lg:w-[180px] md:w-[170px] md:h-[95px] xl:h-[90px] rounded-2xl bg-[#e0e0e0] ">
                             <button onclick="navigateToSection(3)">
                                 <h1>Categories</h1>
                             </button>
@@ -112,7 +141,9 @@ require_once("db.php")
     </section>
     <div class="custom-shape-divider-bottom-1697999422">
         <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="fill-[#ee3c20]"></path>
+            <path
+                d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+                class="fill-[#ee3c20]"></path>
         </svg>
     </div>
     <section class="page-wrapper min-h-screen bg-[#ee3c20] pt-10 relative " id="section2">
@@ -137,7 +168,8 @@ require_once("db.php")
                     <span class="more__element">
                         <span class="content">
                             <span class="headline">Sparking Berry Juice</span>
-                            <span class="excerpt">An all-new non-alcoholic beverage. Valberries of varying ripeness add layers of
+                            <span class="excerpt">An all-new non-alcoholic beverage. Valberries of varying ripeness add
+                                layers of
                                 sour-to-sweet to this juice while the cooling sparkling water refreshes the soul
                                 a fine companion for a pleasant and leisurely time.</span>
                             <span class="link">
@@ -163,7 +195,8 @@ require_once("db.php")
                     <span class="more__element">
                         <span class="content">
                             <span class="headline">Fonta</span>
-                            <span class="excerpt">A specialty drink created by the Fontaine Research Institute. It is well-received by locals.
+                            <span class="excerpt">A specialty drink created by the Fontaine Research Institute. It is
+                                well-received by locals.
                                 "Refreshing Fonta, a Font of Refreshment!"</span>
                             <span class="link">
                                 <div class="fill "></div>
@@ -190,8 +223,10 @@ require_once("db.php")
                     <span class="more__element">
                         <span class="content">
                             <span class="headline">Dango Milk</span>
-                            <span class="excerpt">A creative snack made by adding sticky dango to milk. It is sweet and has a dense mouthfeel. All the customers who have tried it love it.
-                                Still, it is dango that's been added in — drink too much and you might lose your appetite.</span>
+                            <span class="excerpt">A creative snack made by adding sticky dango to milk. It is sweet and
+                                has a dense mouthfeel. All the customers who have tried it love it.
+                                Still, it is dango that's been added in — drink too much and you might lose your
+                                appetite.</span>
                             <span class="link">
                                 <div class="fill fill-dark"></div>
                                 <a href="drink.php">Open catalog</a>
@@ -214,8 +249,11 @@ require_once("db.php")
 
     <section class="sec-01 min-h-screen relative bg-[#ebe0ce]" id="section3">
         <div class="custom-shape-divider-top-1697999540">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="fill-[#ee3c20]"></path>
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none">
+                <path
+                    d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+                    class="fill-[#ee3c20]"></path>
             </svg>
         </div>
         <div class="containeraos flex items-center justify-center ">
@@ -224,16 +262,25 @@ require_once("db.php")
             </div>
             <div class="contentaos pt-10 md:ml-20 lg:ml-0 flex flex-col lg:flex-row">
                 <div class="image relative ml-0 lg:ml-10 xl:ml-0">
-                    <img src="./Food/Item_Barbeque_Ribs.webp" id="updownfood" style="--a:1;" class="z-1 w-[95%] pl-8 md:ml-28 md:pt-20 md:w-[70%] lg:w-[75%] lg:ml-20 xl:w-[75%] xl:ml-20 xl:pt-2" alt="">
-                    <img src="./Food/Item_Fontainian_Foie_Gras.webp" id="updownfood" style="--a:2;" class="z-2 w-[100%] pr-20 pt-20 md:pt-60 md:w-[85%] md:pr-40 lg:pt-40 lg:pr-16 lg:w-[75%] xl:w-[200%] xl:pr-52 xl:pt-32" alt="">
-                    <img src="./Food/Item_Adeptus_Temptation.webp" id="updownfood" style="--a:3;" class="z-3 w-[95%] pt-40 pl-28 md:pt-80 md:pl-40 md:w-[90%] lg:pt-60 lg:ml-20 lg:w-[80%] xl:w-[85%] xl:pt-48 xl:ml-20" alt="">
+                    <img src="./Food/Item_Barbeque_Ribs.webp" id="updownfood" style="--a:1;"
+                        class="z-1 w-[95%] pl-8 md:ml-28 md:pt-20 md:w-[70%] lg:w-[75%] lg:ml-20 xl:w-[75%] xl:ml-20 xl:pt-2"
+                        alt="">
+                    <img src="./Food/Item_Fontainian_Foie_Gras.webp" id="updownfood" style="--a:2;"
+                        class="z-2 w-[100%] pr-20 pt-20 md:pt-60 md:w-[85%] md:pr-40 lg:pt-40 lg:pr-16 lg:w-[75%] xl:w-[200%] xl:pr-52 xl:pt-32"
+                        alt="">
+                    <img src="./Food/Item_Adeptus_Temptation.webp" id="updownfood" style="--a:3;"
+                        class="z-3 w-[95%] pt-40 pl-28 md:pt-80 md:pl-40 md:w-[90%] lg:pt-60 lg:ml-20 lg:w-[80%] xl:w-[85%] xl:pt-48 xl:ml-20"
+                        alt="">
                 </div>
-                <div class="text-box shadow-xl rounded-2xl w-[300px] md:w-[400px] font-bold ml-16 md:ml-16 lg:ml-4 mb-20">
+                <div
+                    class="text-box shadow-xl rounded-2xl w-[300px] md:w-[400px] font-bold ml-16 md:ml-16 lg:ml-4 mb-20">
                     <div class="textboxC"></div>
                     <img src="./img/Paimon.webp" alt="" class="w-[40%] absolute ml-60 pb-20">
                     <h1 class="text-3xl pb-8 text-[#ee3c20]">Main Dish</h1>
 
-                    <p class="font-semibold text-justify">Savor the essence of Teyvat "Harmony of the Elements Platter," a diverse menu and delectable dish that combines flavors from across the realm in one captivating culinary experience.</p>
+                    <p class="font-semibold text-justify">Savor the essence of Teyvat "Harmony of the Elements Platter,"
+                        a diverse menu and delectable dish that combines flavors from across the realm in one
+                        captivating culinary experience.</p>
                     <div class="contentbox">
                         <a href="main.php" class="shadow-2xl pt-10">Open catalog</a>
                     </div>
@@ -399,19 +446,29 @@ require_once("db.php")
                 <h1 class="text-3xl md:text-5xl text-[#]"><a href="side.php">Side Dish</a></h1>
             </div>
             <div class="contentaos  md:ml-20 lg:ml-0 flex flex-col lg:flex-row">
-                <div class="text-box shadow-xl rounded-2xl w-[300px] md:w-[400px] font-bold ml-16 md:ml-16 lg:ml-4 mb-20">
+                <div
+                    class="text-box shadow-xl rounded-2xl w-[300px] md:w-[400px] font-bold ml-16 md:ml-16 lg:ml-4 mb-20">
                     <div class="textboxC"></div>
                     <img src="./img/Paimon.webp" alt="" class="w-[40%] absolute ml-60 pb-20">
                     <h1 class="text-3xl pb-8 text-[#ee3c20]">Side Dish</h1>
-                    <p class="font-semibold text-justify">Introducing our side dish that embodies the essence of Teyvat's natural beauty. Crisp lotus root and fresh, seasonal vegetables harmonize with a delicate dressing, bringing a touch of the divine to your meal. A refreshing, celestial delight that perfectly complements your Genshin-themed culinary adventure.</p>
+                    <p class="font-semibold text-justify">Introducing our side dish that embodies the essence of
+                        Teyvat's natural beauty. Crisp lotus root and fresh, seasonal vegetables harmonize with a
+                        delicate dressing, bringing a touch of the divine to your meal. A refreshing, celestial delight
+                        that perfectly complements your Genshin-themed culinary adventure.</p>
                     <div class="contentbox">
                         <a href="side.php" class="shadow-2xl pt-10">Open catalog</a>
                     </div>
                 </div>
                 <div class="image relative ml-0 lg:ml-10 xl:ml-0">
-                    <img src="./Food/Item_Zhongyuan_Chop_Suey.webp" id="updownfood" style="--a:1;" class="z-1 w-[95%] pl-8 md:ml-28 md:pt-10 md:w-[70%] lg:w-[75%] lg:ml-20 xl:w-[75%] xl:ml-20 xl:pt-2" alt="">
-                    <img src="./Food/Item_Bird_Egg_Sushi.webp" id="updownfood" style="--a:2;" class="z-2 w-[100%] pr-20 pt-20 md:pt-40 md:w-[85%] md:pr-40 lg:pt-40 lg:pr-16 lg:w-[75%] xl:w-[200%] xl:pr-52 xl:pt-32" alt="">
-                    <img src="./Food/Item_Crab_Roe_Kourayaki.webp" id="updownfood" style="--a:3;" class="z-3 w-[95%] pt-40 pl-28 md:pt-48 md:pl-40 md:w-[90%] lg:pt-60 lg:ml-16 lg:w-[90%] xl:w-[90%] xl:pt-48 xl:ml-20" alt="">
+                    <img src="./Food/Item_Zhongyuan_Chop_Suey.webp" id="updownfood" style="--a:1;"
+                        class="z-1 w-[95%] pl-8 md:ml-28 md:pt-10 md:w-[70%] lg:w-[75%] lg:ml-20 xl:w-[75%] xl:ml-20 xl:pt-2"
+                        alt="">
+                    <img src="./Food/Item_Bird_Egg_Sushi.webp" id="updownfood" style="--a:2;"
+                        class="z-2 w-[100%] pr-20 pt-20 md:pt-40 md:w-[85%] md:pr-40 lg:pt-40 lg:pr-16 lg:w-[75%] xl:w-[200%] xl:pr-52 xl:pt-32"
+                        alt="">
+                    <img src="./Food/Item_Crab_Roe_Kourayaki.webp" id="updownfood" style="--a:3;"
+                        class="z-3 w-[95%] pt-40 pl-28 md:pt-48 md:pl-40 md:w-[90%] lg:pt-60 lg:ml-16 lg:w-[90%] xl:w-[90%] xl:pt-48 xl:ml-20"
+                        alt="">
                 </div>
             </div>
         </div>
@@ -423,16 +480,25 @@ require_once("db.php")
             </div>
             <div class="contentaos pt-10 md:ml-20 lg:ml-0 flex flex-col lg:flex-row">
                 <div class="image relative ml-0 lg:ml-10 xl:ml-0">
-                    <img src="./Food/Item_Bamboo_Shoot_Soup.webp" id="updownfood" style="--a:1;" class="z-1 w-[95%] pl-8 md:ml-28 md:pt-20 md:w-[70%] lg:w-[75%] lg:ml-20 xl:w-[75%] xl:ml-20 xl:pt-2" alt="">
-                    <img src="./Food/Item_Black-Back_Perch_Stew.webp" id="updownfood" style="--a:2;" class="z-2 w-[100%] pr-20 pt-20 md:pt-60 md:w-[85%] md:pr-40 lg:pt-40 lg:pr-16 lg:w-[75%] xl:w-[200%] xl:pr-52 xl:pt-32" alt="">
-                    <img src="./Food/Item_Jade_Fruit_Soup.webp" id="updownfood" style="--a:3;" class="z-3 w-[95%] pt-40 pl-28 md:pt-80 md:pl-40 md:w-[90%] lg:pt-60 lg:ml-20 lg:w-[80%] xl:w-[85%] xl:pt-48 xl:ml-20" alt="">
+                    <img src="./Food/Item_Bamboo_Shoot_Soup.webp" id="updownfood" style="--a:1;"
+                        class="z-1 w-[95%] pl-8 md:ml-28 md:pt-20 md:w-[70%] lg:w-[75%] lg:ml-20 xl:w-[75%] xl:ml-20 xl:pt-2"
+                        alt="">
+                    <img src="./Food/Item_Black-Back_Perch_Stew.webp" id="updownfood" style="--a:2;"
+                        class="z-2 w-[100%] pr-20 pt-20 md:pt-60 md:w-[85%] md:pr-40 lg:pt-40 lg:pr-16 lg:w-[75%] xl:w-[200%] xl:pr-52 xl:pt-32"
+                        alt="">
+                    <img src="./Food/Item_Jade_Fruit_Soup.webp" id="updownfood" style="--a:3;"
+                        class="z-3 w-[95%] pt-40 pl-28 md:pt-80 md:pl-40 md:w-[90%] lg:pt-60 lg:ml-20 lg:w-[80%] xl:w-[85%] xl:pt-48 xl:ml-20"
+                        alt="">
                 </div>
-                <div class="text-box shadow-xl rounded-2xl w-[300px] md:w-[400px] font-bold ml-16 md:ml-16 lg:ml-4 mb-20">
+                <div
+                    class="text-box shadow-xl rounded-2xl w-[300px] md:w-[400px] font-bold ml-16 md:ml-16 lg:ml-4 mb-20">
                     <div class="textboxC"></div>
                     <img src="./img/Paimon.webp" alt="" class="w-[40%] absolute ml-60 pb-20">
                     <h1 class="text-3xl pb-8 text-[#ee3c20]">Soup</h1>
 
-                    <p class="font-semibold text-justify">Savor the essence of Teyvat "Harmony of the Elements Platter," a diverse menu and delectable soup that combines flavors from across the realm in one captivating culinary experience.</p>
+                    <p class="font-semibold text-justify">Savor the essence of Teyvat "Harmony of the Elements Platter,"
+                        a diverse menu and delectable soup that combines flavors from across the realm in one
+                        captivating culinary experience.</p>
                     <div class="contentbox">
                         <a href="soup.php" class="shadow-2xl pt-10">Open catalog</a>
                     </div>
@@ -721,20 +787,22 @@ require_once("db.php")
             if (cart.classList.contains('active')) {
                 cart.style.left = '150%';
 
-                setTimeout(function() {
+                setTimeout(function () {
                     cart.classList.remove('active');
                 }, 500);
             } else {
                 cart.style.left = '90%';
-                setTimeout(function() {
+                setTimeout(function () {
                     cart.classList.add('active');
                 }, 0);
             }
         }
     </script>
     <div id="slide-cart">
-        <a href="#" onclick="toggle_cart()">Close</a>
-        <h1>My Cart</h1>
+        <a class='card__desc' href="#" onclick="toggle_cart()">&times;</a>
+
+        <h1 class='card__title'>My Cart</h1>
+        <br />
         <?php
         if (isset($_SESSION["id"]) && isset($_SESSION["username"])) {
             $sql = "SELECT * FROM cart WHERE id_user = ?";
@@ -745,31 +813,32 @@ require_once("db.php")
             $totalAll = 0;
             while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                 $total = $row['Price'] * $row['Qty'];
-        ?>
+                ?>
 
-                <p>
+                <p class='card__desc'>
                     <?= $row['Food Name'] ?>
                 </p>
-                <p>
+                <p class='card__desc'>
                     <?= $row['Price'] ?>
                 </p>
-                <p>
+                <p class='card__desc'>
                     <?= $row['Category'] ?>
                 </p>
-                <p>Harga :
+                <p class='card__desc'>Harga :
                     <?= $row['Price'] ?> x
                     <?= $row['Qty'] ?> =
                     <?= $total ?>
                 </p>
 
                 <form action='delete_cart.php' method='POST'>
-                    <input type='hidden' name='cart-name' value='main'></input>
+                    <input type='hidden' name='cart-name' value='drink'></input>
                     <input type='hidden' name='id' value='<?= $row['id'] ?>'>
-                    <button type='submit'>Remove from cart</button>
+                    <button type='submit' class='bg-[#ee3c20] text-white px-2 py-1 rounded'>
+                        <p>Remove from cart</p>
+                    </button>
                 </form>
-                <br>
 
-            <?php
+                <?php
                 $totalAll += $total;
             }
 
@@ -778,19 +847,21 @@ require_once("db.php")
             $stmt->execute([$_SESSION['id']]);
 
             if ($tempRow = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            ?>
-                <p>Total :
+                ?>
+                <p class='card__desc'>Total :
                     <?= $totalAll ?>
                 </p>
                 <br>
-                <a href='receipt.php'>Checkout</a>
-            <?php
+                <button class=''>
+                    <a class='card__desc bg-[#ee3c20] text-white px-2 py-1 rounded' href='receipt.php'>Checkout</a>
+                </button>
+                <?php
             }
         } else {
             ?>
             <p>You are not logged in, log in to view cart.</p>
             <a href='login.php'>Login</a>
-        <?php
+            <?php
         }
         ?>
     </div>

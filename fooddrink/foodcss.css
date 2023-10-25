@@ -215,6 +215,7 @@ svg {
     overflow-y: auto;
     background: url("./../img/bgrcpt.png");
     background-size: cover;
+    z-index: 99999999999;
 }
 
 #slide-cart.active {
